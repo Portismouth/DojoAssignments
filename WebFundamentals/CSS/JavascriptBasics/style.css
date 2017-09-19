@@ -1,0 +1,68 @@
+/*JAVASCRIPT BASICS STYLESHEET*/
+h1,h2,h2,h2,p,ul,li{
+    color: #C3D6EB;
+}
+a{
+    color: #63CEDD;
+}
+a:hover{
+    cursor: pointer;
+}
+ul{
+    padding-left: 20px;
+}
+.container{
+    max-width: 979px;
+    padding: 10px;
+    background-color: #1D355C;
+    margin: 0 auto;
+}
+.container div{
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+/*Header CSS*/
+.header{
+    padding: 5px 20px;
+    background-color: #CC323B;
+    margin-bottom: 20px;
+}
+
+/*Navigation CSS*/
+.navigation{
+    display: inline-block;
+    width: 20%;
+    margin-right: 3%;
+    background-color: #2F7D8B;
+    padding: 20px;
+    vertical-align: top;
+}
+.navigation .noDecoration{
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.navigation .main-menu{
+    margin-top: 0px;
+}
+
+/*Content CSS*/
+.content{
+    background-color: rgba(15, 24, 34,0.6);
+    width: 68%;
+    display: inline-block;
+    padding: 10px 20px;
+}
+.content ul li{
+    padding-bottom: 10px;
+}
+.content .important{
+    color: #6E7FDE;
+}
+
+/*Footer CSS*/
+.footer{
+    margin-bottom: 0px !important;
+    background-color: rgb(94, 102, 114);
+    padding: 10px 20px;
+}
