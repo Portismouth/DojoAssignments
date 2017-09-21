@@ -1,0 +1,201 @@
+/*Internet CSS*/
+h1, h2, h3, h4, p, li, a, span, strong, button{
+    font-family: 'Open Sans', sans-serif;
+}
+p, li, a{
+    font-size: 14px;
+}
+.wrapper{
+    width: 970px;
+    margin: 0 auto;
+    position: relative;
+    background: #ffffff;
+    background: -webkit-linear-gradient(#E3E3E3, #ffffff); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#E3E3E3, #ffffff); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#E3E3E3, #ffffff); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#E3E3E3, #ffffff 25%); /* Standard syntax (must be last) */
+}
+li{
+    margin-bottom: 5px;
+}
+img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+h3, .emphasis{
+    color: #26669C;
+}
+a, a:visited{
+    color: #00C0DD;
+    text-decoration: none;
+}
+p, h1, h2, h3, h4{
+    margin: 0.5em 0;
+    line-height: 1.2em;
+}
+.emphasis.red{
+    color: #D72626;
+}
+.alignTop{
+    display: inline-block;
+    vertical-align: top;
+}
+.alignBot{
+    display: inline-block;
+    vertical-align: bottom;
+}
+.alignMid{
+    vertical-align: middle;
+}
+/*Header CSS*/
+.logo{
+    width: 70px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.title{
+    padding: 15px 0 0 75px;
+    margin: 0;
+    background: #ffffff;
+    padding-bottom: 5px;
+}
+.sub-title{
+    color: #ffffff;
+    padding: 10px 20px;
+    margin: 0;
+    background: #29679D;
+    background: -webkit-linear-gradient(#29679D, #5283AA, #29679D); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#29679D, #5283AA, #29679D); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#29679D, #5283AA, #29679D); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#29679D, #5283AA, #29679D); /* Standard syntax (must be last) */
+}
+/*Sidebar CSS*/
+.sidebar{
+    width: 20%;
+    margin-right:5%;
+    margin-top: 20px;
+}
+.sidebar button{
+    width: 100%;
+    font-size: 16px;
+    color:#ffffff;
+    border: 0px!important;
+    border-radius: 5px;
+    padding: 5px 0;
+    margin-bottom: 3px;
+    background: #05B6D1;
+    background: -webkit-linear-gradient(#7CD0DE, #05B6D1); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#7CD0DE, #05B6D1); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#7CD0DE, #05B6D1); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#7CD0DE, #05B6D1); /* Standard syntax (must be last) */
+    box-shadow: 3px 3px 1px -2px rgba(0,0,0,0.4);
+}
+.sidebar button.watch{
+    margin-top: 15px;
+    background: -webkit-linear-gradient(#6599C1, #2B699E); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#6599C1, #2B699E); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#6599C1, #2B699E); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#6599C1, #2B699E); /* Standard syntax (must be last) */
+}
+.sidebar button.resources{
+    margin-bottom: 15px;
+    background: -webkit-linear-gradient(#E9AC5E, #EE7607); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#E9AC5E, #EE7607); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#E9AC5E, #EE7607); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#E9AC5E, #EE7607); /* Standard syntax (must be last) */
+}
+.advertisement{
+    background-image: url(images/ad_background.png);
+    background-position: 38% 60%;
+    text-align: center;
+    padding: 30px 10px;
+    border-top: 1px solid grey;
+    margin-top: 20px;
+}
+.advertisement h3{
+    color: #ffffff;
+    margin: 0;
+    font-size: 23px;
+}
+.advertisement button{
+    margin-top: 20px; 
+}
+.advertisement .arrows{
+    font-size: 10px;
+}
+.addMargin{
+    margin-bottom: 15px;
+}
+.ninja{
+    width: 50%;
+    margin: 0 auto;
+}
+/*Content CSS*/
+.content{
+    position: relative;
+    width: 74%;
+}
+.contentHeader{
+    width: 100%;
+    white-space: nowrap;
+    padding-bottom: 10px;
+    border-bottom: 1px solid grey;
+}
+.contentBox{
+    width:50%;
+}
+span.dns{
+    position: relative;
+    top: 4px;
+}
+.dns{
+    font-size: 16px;
+    color: #26669C;
+}
+.phoneNumbers.contentBox{
+    width: 49%;
+}
+.home{
+    width: 25px;
+    display: inline-block;
+}
+.phoneNumbers{
+    text-align: right;
+}
+.phoneIcon{
+    width:45px;
+    margin-top: 10px;
+}
+.phoneText{
+    margin: 0;
+    font-size: 11px;
+    line-height: 1.2;
+}
+.number{
+    font-size: 26px;
+    color: #00C0DD;
+}
+.clientImage{
+    width: 45%;
+    margin: 0 auto;
+}
+.bigThree{
+    border: 5px solid #00C0DD;
+    border-bottom: 0px;
+    padding: 10px;
+}
+.bigThree h3{
+    margin-top: 0px;
+}
+.bigThree img{
+    width: 20%;
+    margin-right: 3%;
+}
+.threeDescription{
+    width: 76%;
+}
+.threeDescription p:last-child{
+    margin-bottom: 0px;
+}
