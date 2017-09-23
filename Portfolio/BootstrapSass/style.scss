@@ -1,0 +1,370 @@
+
+@import 'normalize';
+
+@mixin linear-gradient($start,$end) {
+background:           $start; 
+background:           -webkit-linear-gradient($start,$end); 
+background:           -o-linear-gradient($start,$end); 
+background:           -moz-linear-gradient($start,$end); 
+background:           linear-gradient($start,$end); 
+}
+@mixin hover-state {
+    &:hover, &:active, &:focus {
+        @content;
+    }
+}
+@mixin vertical-center{
+position:   relative;
+top:        50%;
+transform:  translateY(-50%);
+}
+
+/*------------- Colors ------------------------*/
+$font-stack:           'Nunito', sans-serif;
+$text-dark:           #777777;
+$text-light:          #ffffff;
+$primary-color:       #F2F0E3;
+$secondary-color:     #806b51;
+$third-color:         #135C13;
+$transparent:           transparent;
+
+
+/*------------- Format --------------------*/
+$full-width:    100%;
+$full-height:   100%;
+$font-small:    14px;
+$font-medium:   $font-small * 1.5;
+$font-large:    $font-medium * 1.5;
+$auto:          0 auto;
+$rel:           relative;
+$abs:           absolute;
+
+/* START CSS*/
+body, html {
+    height: $full-width;
+}
+
+h1,h2,h3,h4,h5,h6,strong,li,a,span,p{
+    font-family: $font-stack;
+}
+h1,h2,h3,h4{
+    font-weight: 900;
+}
+img, iframe{
+    width: $full-width;
+}
+body{
+    background-image: url("img/background.jpg");
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h1,h2,h3,h4,p,li,i, a {
+    color: $text-dark;
+}
+.about h1, .about p{
+    color: $text-light;
+}
+.rowBrown{
+    background: $secondary-color;
+}
+.rowLight{
+    background: $primary-color;
+}
+.rowLight.fadeColor{
+    @include linear-gradient($primary-color, $transparent );
+}
+.eq-height textarea{
+    height: $full-height;
+}
+/*HEADER CSS*/
+#mobileMenu{
+    position: relative;
+    width: $full-width;
+    background-color: $secondary-color!important;
+    min-height: 0;
+    margin: 0;
+    display: none;
+    #menu{
+        text-align: center;
+        display: block;
+        &.navbar-nav{
+            margin: 0;
+        }
+        li{
+            display: block;
+            a{
+                color: $text-light!important;
+                background-image:none;
+            }
+        }
+    }
+    &.visible{
+        visibility: visible;
+    }
+}
+.scrollDown{
+    display: none;
+    text-align: center;
+    width: 200px;
+    margin: $auto;
+    position:   relative;
+    top:        60%;
+    transform:  translateY(-50%);
+    text-shadow: 1px 1px 1px #000000;
+    a{
+        @include hover-state{
+            text-decoration: none!important;
+        }
+        &:hover .downArrow{
+            top: 5px;
+    }
+    h4{
+        margin: 0;
+        padding: 10px;
+    }
+    .downArrow i, h4{
+        color: $text-light;
+    }
+    .downArrow{
+        transition: 0.3s;
+        position: $rel;
+        top: 0;
+        i{
+            font-size: $font-large;
+        }
+    }
+    }
+}
+#header{
+    height: $full-height;
+    overflow: hidden;
+    .navbar-default{
+      background-color: $transparent;
+      border-color: $transparent;
+      .navbar-toggle{
+            border: none;
+            @include hover-state{background-color: $transparent;}       
+        }
+    }
+    .row.fixed{
+        position: relative;
+        background: transparent;
+        z-index: 1001;
+        top: 0;
+        left: 0;
+        .navbar-toggle{
+            position: fixed;
+        }
+    }
+    .navbar-nav{
+      width: $full-width;
+      text-align: center;
+      li{
+        float: none;
+        display: inline-block;
+        a{
+          background-image: linear-gradient($text-dark, $text-dark);
+          background-size: 0 1px, auto;
+          background-repeat: no-repeat;
+          background-position: center bottom;
+          transition: all .2s ease-out;
+          font-size: $font-medium;
+        }
+        a:hover{
+          background-size: 100% 1px, auto;
+        }
+      }
+    }
+    .icon-bar{
+        width: 22px;
+        transition: all 0.3s;
+    }
+    .barOne.opened{
+        transform: rotate(45deg);
+        transform-origin: 10% 10%;
+    }
+    .barTwo.opened{
+        opacity: 0;
+    }
+    .barThree.opened{
+        transform: rotate(-45deg);
+        transform-origin: 10% 90%;
+    }
+}
+.logo{
+    max-width: 200px;
+    margin: $auto;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+    background: $transparent;
+}
+.navbar-default .navbar-nav>li>a:focus{
+    color: $text-dark;
+}
+
+/*Content CSS*/
+.description, .parks h3, .parks h4{
+    color: $text-dark;
+}
+.about{
+    padding: 50px 0;
+    hr{
+        border-top: 2px solid  $text-light;
+    }
+} 
+.parks{
+    padding: 50px 0;
+}
+.thumbnail{
+    border-radius: 50%;
+    width: 66%;
+    margin: $auto;
+}
+.contactSection{
+    padding-bottom: 32px;
+    .form-group{
+        height: 122px;
+        textarea{
+            height: 100%;
+        }
+    }
+}
+.contact{
+    margin-bottom: 250px;
+}
+
+/*Carousel CSS*/
+#myCarousel{
+    & .item{
+        max-height: 450px;
+    }
+}
+
+/*Footer*/
+.backtotop{
+    background: $primary-color;
+    padding-bottom: 5px;
+    h4{
+        margin: 0px;        
+    }
+    a{
+        @include hover-state{
+            text-decoration: none!important;
+        }
+        &:hover .upArrow{
+            top: -5px;
+        }
+    }
+}
+.social li, .social p, .social h3, .social li i{
+    color: $text-light;
+}
+.social{
+    background-color: $third-color;
+    padding: 15px 15px 0 15px;
+    ul{
+        padding: 0px;
+        li{
+            list-style-type: none;
+            display: inline;
+            margin: 0 15px 0 15px;
+            i{
+                font-size: $font-medium;
+                transition: 0.3s;
+                position: $rel;
+                top: 0;
+            }
+            &:hover i{
+                top: -5px;
+            }
+        }
+    }
+    h3{
+        margin-bottom: 20px;
+    }
+}
+.upArrow{
+    transition: 0.3s;
+    position: $rel;
+    top: 0;
+    i{
+        font-size: $font-large;
+    }
+}
+
+p.copyright{
+  margin: 0;
+  font-size: 12px;
+}
+
+/*Dot Navigation*/
+#dot-nav{    
+	right: 20px;
+	top: 50%;
+	margin-top: -50px;
+	height: 100px;
+	z-index: 999;
+    ul{
+        list-style: none;
+        margin:0;
+        padding: 0;
+        li{
+            position: $rel;
+            background-color: #bdc3c7;
+            border:3px solid #bdc3c7;
+            border-radius: 15px 15px 15px 15px;
+            cursor: pointer;
+            padding: 5px;
+            height: 10px;
+            margin: 10px 10px 0px 0px;
+            width: 10px;
+            vertical-align:bottom;
+            a{
+                outline: 0;
+                vertical-align:top;
+                margin: 0px 0px 0px 25px;
+                position: $rel;
+                top:-5px;
+            }
+            &:hover{
+                background-color: $third-color;  
+            } 
+        }
+        .active{
+            background-color: $third-color; 
+        }
+    }
+}
+
+.awesome-tooltip + .tooltip > .tooltip-inner {
+    background-color: $third-color; 
+    color: $text-light; 
+    border: 1px solid $third-color; 
+}
+.awesome-tooltip + .tooltip.left > .tooltip-arrow{
+    top:50%;
+    right:0;
+    margin-top:-5px;
+    border-top:5px solid $transparent;
+    border-bottom:5px solid $transparent;
+    border-left:5px solid $third-color;
+}
+
+/*-------------------- Media Queries ----------------------*/
+
+@media screen and (max-width: 768px) {
+    #menu{
+        display: none;
+    }
+    .contactSection{
+        padding-bottom: 0px;
+    }
+    .scrollDown{
+        display: block;
+    }
+    .thumbnail{
+        width: 50%;
+    }
+}

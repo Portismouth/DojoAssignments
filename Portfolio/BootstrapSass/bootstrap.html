@@ -1,0 +1,214 @@
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+    
+      <title>BootStrap Sass Practice</title>
+      <meta name="description" content="The HTML5 Herald">
+      <meta name="author" content="SitePoint">
+    
+      
+      <script
+      src="https://code.jquery.com/jquery-1.12.4.min.js"
+      integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+      crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      <script src="custom.js"></script>
+
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
+
+      <link rel="stylesheet" href="style.css">
+    
+      <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+      <![endif]-->
+
+</head>
+<body>
+    <section id="home"> 
+    <header id="header" class="container-fluid">
+        <div class="row rowLight">
+            <div class="col-sm-4 col-xs-3 col-sm-offset-4 text-center">
+                <div class="logo">
+                    <img src="img/logo.jpg" />
+                </div>
+            </div> 
+            <nav class="navbar navbar-default col-sm-12 col-xs-9 text-center" role="navigation">
+                <div class="container-fluid">
+                    <!-- Toggle for Mobile Menu -->
+                    <div class="navbar-header">
+                    <button type="button" class="navbar-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar barOne"></span>
+                        <span class="icon-bar barTwo"></span>
+                        <span class="icon-bar barThree"></span>
+                    </button>
+                    </div>
+                    <!-- Main Menu -->
+                    <div id="menu">
+                        <ul id="menu" class="nav navbar-nav">
+                                <li><a href="#about">About</a></li>
+                                <li><a href="#gallery">Gallery</a></li>
+                                <li><a href="#hikes">Hikes</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </div><!-- /.container-fluid -->
+            </nav>
+        </div>
+        <div id="mobileMenu" class="navbar navbar-default"></div>
+        <div class="scrollDown">
+            <a href="#about">
+                <h4 class="down">View More</h4>
+                <span class="downArrow"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+            </a>
+        </div>
+    </header>
+    </section>
+    <section id="about">
+    <div class="container-fluid">
+        <div class="row about rowBrown">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <h1>About Us</h1>
+                <hr size="10" width="30px" noshade>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero tincidunt, dapibus arcu at, pharetra magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras iaculis nunc mauris, eu pretium mauris ornare quis. Ut quis lacus a libero pellentesque convallis. Vestibulum porttitor turpis ut augue elementum feugiat. Maecenas justo diam, fringilla vitae velit id, auctor rutrum felis. Proin luctus mollis fermentum. In et sapien non nisl efficitur porttitor ac rhoncus erat. Nam eu ante dictum, feugiat enim eget, ultrices ex. </p>
+            </div>
+        </div>
+        
+    </div>
+    </section>
+    <section id="gallery">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>                            
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="img/imageThree.jpg" alt="Los Angeles" style="width:100%;">
+                </div>                      
+                <div class="item">
+                    <img src="img/imageTwo.jpg" alt="Chicago" style="width:100%;">
+                </div>
+                                
+                <div class="item">
+                    <img src="img/imageOne.jpg" alt="New york" style="width:100%;">
+                </div>
+            </div>
+                            
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>        
+         </div>
+    </section>
+    <section id="hikes">
+    <div class="container-fluid">
+        <div class="row parks rowLight">
+            <div class="col-sm-12 text-center">
+                <h1>Featured Hikes</h1>
+                <hr size="10" width="30px" noshade>
+            </div>
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="col-sm-4 text-center">
+                    <img class="thumbnail" src="img/parkOne.jpg" />
+                    <h4 class="text-center">Highland Park</h4>
+                    <hr size="10" width="30px" noshade>
+                    <p class="description">orem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero tincidunt, dapibus arcu at, pharetra magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras iaculis nunc mauris, eu pretium mauris ornare quis.</p>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <img class="thumbnail" src="img/parkTwo.jpg" />
+                    <h4 class="">Arches</h4>
+                    <hr size="10" width="30px" noshade>
+                    <p class="description">orem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero tincidunt, dapibus arcu at, pharetra magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras iaculis nunc mauris, eu pretium mauris ornare quis.</p>         
+                </div>
+                <div class="col-sm-4 text-center">
+                    <img class="thumbnail" src="img/parkThree.jpg" />
+                    <h4 class="">Viewers Point</h4>
+                    <hr size="5" width="30px" noshade>
+                    <p class="description">orem ipsum dolor sit amet, consectetur adipiscingelit. Ut non libero tincidunt, dapibus arcu at, pharetra magna.Pellentesque habitant morbi tristique senectus et netus et malesuada famesac turpis egestas. Cras iaculis nunc mauris, eu pretium mauris ornarequis.</p>         
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="container-fluid">
+        <div class="row contact text-center rowLight fadeColor">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="contactSection">
+                    <h1>Contact Us</h1>
+                    <hr width="30px">
+                    <h4>Explore Parks</h4>
+                    <p>
+                        123 Whereever USA 111111<br />
+                        Tel: +1-111-111-1111<br />
+                        Email: myEmail@someemail.com
+                    </p>
+                </div>
+                <div class="col-sm-6 contactSection">
+                    <div class="form-group">
+                            
+                            <input id="form_name" type="text" name="name" class="form-control" placeholder="Name" required="required" data-error="Firstname is required.">
+                            <div class="help-block with-errors"></div>
+                            
+                            <input id="form_email" type="email" name="email" class="form-control" placeholder="Email" required="required" data-error="Valid email is required.">
+                            <div class="help-block with-errors"></div>
+                            
+                            <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Phone">
+                            <div class="help-block with-errors"></div>
+                    </div>
+                </div>
+                <div class="col-sm-6 contactSection ">
+                        <div class="form-group">
+                                
+                                <textarea id="form_message" name="message" class="form-control" placeholder="Message" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                                <div class="help-block with-errors"></div>
+                        </div>
+                </div>
+                <div class="col-sm-12 contactSection ">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.79865900506!2d-87.63743104933948!3d41.89718697209716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34b101406dd%3A0xbcb033dac668f88b!2sCoding+Dojo+Chicago!5e0!3m2!1sen!2sus!4v1506025920082" width="600" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="footer" class="container-fluid text-center">
+        <div class="row">
+            <div class="col-sm-12 backtotop">
+                <a href="#home">
+                    <span class="upArrow"><i class="fa fa-angle-up" aria-hidden="true"></i></span>
+                    <h4 class="backTop">Back to top</h4>
+                </a>
+            </div>
+            <div class="col-sm-12 social">
+                <div class="socialContent">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                    </ul>
+                    <p class="copyright">&copy; 2017 Mitchell Morrison</p>
+                </div>
+            </div> 
+        </div>
+    </section>
+    <div data-spy="affix" id="dot-nav">
+            <ul>
+            <li class="awesome-tooltip active" title="Home"><a href="#home"></a></li>
+            <li class="awesome-tooltip" title="About"><a href="#about"></a></li>
+            <li class="awesome-tooltip" title="Gallery"><a href="#gallery"></a></li>
+            <li class="awesome-tooltip" title="Hikes"><a href="#hikes"></a></li>
+            <li class="awesome-tooltip" title="Contact"><a href="#contact"></a></li>
+            </ul>
+    </div>  
+</body>
+</html>
+
