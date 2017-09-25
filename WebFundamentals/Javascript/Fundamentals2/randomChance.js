@@ -2,7 +2,7 @@ function slots(quarters, pass){
     while(quarters > 0){
         quarters -- 
         var win = 10;
-        var rand = Math.trunc(Math.random() * 100); // Creates random number so see if winner
+        var rand = Math.floor((Math.random() * 100) + 1); // Creates random number so see if winner
        if ( quarters > pass) {
             // Checks if you have won enough quarts to quit
             return quarters;
@@ -18,6 +18,6 @@ function slots(quarters, pass){
     }
 }
 var quarters = 10; // Amount of Starting Quarters
-var pass = 200; // If you Make this much, Stop playing
+var pass = 50; // If you Make this much, Stop playing
 
 console.log(slots(quarters, pass))
