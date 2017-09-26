@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Ninja to Cat</title>
+  <meta name="description" content="Ninja to Cat">
+  <meta name="author" content="Ninja to Cat">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+  <script>
+  $(document).ready(function(){
+      /*
+        console.log($('.test').data('alt-src'))
+        $('.test').data('alt-src', 'img/cat0.png')
+        console.log($('.test').data('alt-src'))
+        $('.test').attr('src', $('.test').data('alt-src'))
+      */
+
+        
+        $('img').click(function(){
+            $(this).addClass('flagged');
+            var temp =  $(this).attr('src') // set temp to current src
+            console.log(temp);
+            $(this).attr('src' , $(this).data('alt-src')) // sets image src to data alt src
+            $(this).data('alt-src', temp )
+            
+      });
+      
+  });
+  </script>
+</head>
+    <div class="wrapper">
+        <img src="img/ninja0.png" data-alt-src='img/cat0.png' alt="image 1" />
+        <img src="img/ninja1.png" data-alt-src='img/cat1.png' alt="image 2" />
+        <img src="img/ninja2.png" data-alt-src='img/cat2.png' alt="image 3" />
+        <img src="img/ninja3.png" data-alt-src='img/cat3.png' alt="image 4" />
+        <img src="img/ninja4.png" data-alt-src='img/cat4.png' alt="image 5" />
+    </div>
+<body>
+</body>
+</html>
