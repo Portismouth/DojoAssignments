@@ -119,6 +119,7 @@ h1,h2,h3,h4,p,li,i, a {
         }
         &:hover .downArrow{
             top: 5px;
+        }
     }
     h4{
         margin: 0;
@@ -135,8 +136,8 @@ h1,h2,h3,h4,p,li,i, a {
             font-size: $font-large;
         }
     }
-    }
 }
+
 #header{
     height: $full-height;
     overflow: hidden;

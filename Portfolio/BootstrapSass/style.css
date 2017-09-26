@@ -538,22 +538,22 @@ h1, h2, h3, h4, p, li, i, a {
   top: 5px;
 }
 
-.scrollDown a h4 {
+.scrollDown h4 {
   margin: 0;
   padding: 10px;
 }
 
-.scrollDown a .downArrow i, .scrollDown a h4 {
+.scrollDown .downArrow i, .scrollDown h4 {
   color: #ffffff;
 }
 
-.scrollDown a .downArrow {
+.scrollDown .downArrow {
   transition: 0.3s;
   position: relative;
   top: 0;
 }
 
-.scrollDown a .downArrow i {
+.scrollDown .downArrow i {
   font-size: 31.5px;
 }
 
