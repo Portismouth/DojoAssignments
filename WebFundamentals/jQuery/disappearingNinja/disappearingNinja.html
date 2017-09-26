@@ -1,0 +1,45 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Disappearing Ninja</title>
+  <meta name="description" content="Disappearing Ninja">
+  <meta name="author" content="Disappearing Ninja">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script>
+  $(document).ready(function(){
+    $('img').click(function(){
+      $(this).fadeOut('slow');
+    });
+    $('button').click(function(){
+      $('img').fadeIn('slow');
+    });
+  })
+</script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="row">
+      <img src="http://auburnyfc.com/images/100x100.gif" alt="100x100"/>
+      <img src="http://auburnyfc.com/images/100x100.gif" alt="100x100"/>
+      <img src="http://auburnyfc.com/images/100x100.gif" alt="100x100"/>
+      <img src="http://auburnyfc.com/images/100x100.gif" alt="100x100"/>
+      <img src="http://auburnyfc.com/images/100x100.gif" alt="100x100"/>
+    </div>
+    <div class="row">
+        <img src="http://auburnyfc.com/images/100x100.gif" alt="100x100"/>
+        <img src="http://auburnyfc.com/images/100x100.gif" alt="100x100"/>
+        <img src="http://auburnyfc.com/images/100x100.gif" alt="100x100"/>
+        <img src="http://auburnyfc.com/images/100x100.gif" alt="100x100"/>
+        <img src="http://auburnyfc.com/images/100x100.gif" alt="100x100"/>
+    </div>
+    <button>RESET</button>
+  </div>
+</body>
+</html>

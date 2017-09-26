@@ -1,0 +1,21 @@
+.wrapper{
+    width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    background: #ededed;
+    padding: 32px;
+}
+img{
+    display: inline-block;
+    margin: 5px;
+}
+button, img{
+    box-shadow: 1px 1px 5px #000;
+    cursor: pointer;
+}
+button{
+    margin-top: 32px;
+    padding: 20px 40px;
+    background: #ffffff;
+    border: 0;
+}
