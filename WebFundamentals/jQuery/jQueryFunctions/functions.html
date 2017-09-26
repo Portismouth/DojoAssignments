@@ -20,6 +20,91 @@
                   $('#hide p').hide();
               })
 
+              //Showing content
+              $('.show').click(function(){
+                  $('#show p').show();
+              })
+
+              //Toggle content
+              $('.toggle').click(function(){
+                  $('#toggle p').toggle();
+              })
+
+              //slideDown
+              $('.slideDown').click(function(){
+                  $('#slideDown p').slideDown("slow");
+              })
+
+              //slideUp
+              $('.slideUp').click(function(){
+                  $('#slideUp p').slideUp("slow");
+              })
+
+              //slideToggle
+              $('.slideToggle').click(function(){
+                  $('#slideToggle p').slideToggle("slow");
+              })
+
+              //fadeIn
+              $('.fadeIn').click(function(){
+                  $('#fadeIn p').fadeIn("slow");
+              })
+
+              //fadeOut
+              $('.fadeOut').click(function(){
+                  $('#fadeOut p').fadeOut("slow");
+              })
+
+              //addClass
+              $('.addClass').click(function(){
+                  $('#addClass').addClass('red');
+              })
+
+              //before
+              $('.before').one('click' , function(e){
+                  e.preventDefault();
+                  $('#before p').before('<p>This text is appearing before!</p>');
+              })
+
+              //after
+              $('.after').one('click' , function(e){
+                  e.preventDefault();
+                  $('#after p').after('<p>This text is appearing after!</p>');
+              })
+
+              //append
+              $('.append').one('click' , function(e){
+                  e.preventDefault();
+                  $('#append .innertwo').append($('#append h1'));
+              })
+
+              //addClass
+              $('.html').click(function(){
+                  $('#html .innertwo').html('<p>Hello World</p>');
+              })
+              
+              //attr
+              $('.attr').click(function(){
+                  $('#attr img').attr('src' , 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxrHVdV0QI9j8BDUlds2zph9jsYNuL8dCw4fjW7wZRz0TZ28dt')
+              })
+              //val
+              $('.val').click(function(){
+                var text = $(this).text();
+                $('#val input').val(text);
+              });
+
+              //text
+              $('.text').click(function(){
+                  var getText = $('#text h1').text();
+                  $('#text p').text(getText);
+              })
+
+              //data
+              $('#data .innertwo p').data('name','mitchell');
+              console.log($)
+              $('.data').click(function(){
+                $('#data .innertwo p').text($('#data .innertwo p').data('name'));
+              })
 
           });
       </script>
@@ -45,139 +130,149 @@
                     <p>Click the button to hide this text!</p>
                 </div>
             </div>
-            <div id="" class="content">
+            <div id="show" class="content">
                 <div class="innerone">
-                    <button class="">Click</button>
+                    <button class="show">Click</button>
                 </div>
                 <div class="innertwo">
-                    <h1>Click</h1>
+                    <h1>Show Content</h1>
+                    <p style="display: none;">This content is now visible!</p>
+                </div>
+            </div>
+            <div id="toggle" class="content">
+                <div class="innerone">
+                    <button class="toggle">Click</button>
+                </div>
+                <div class="innertwo">
+                    <h1>Toggle Content</h1>
+                    <p>Click the button to show and hide this text!</p>
+                </div>
+            </div>
+            <div id="slideDown" class="content">
+                <div class="innerone">
+                    <button class="slideDown">Click</button>
+                </div>
+                <div class="innertwo">
+                    <h1>Slide Down Hidden Content</h1>
+                    <p style="display: none;">This content just slid down!</p>
+                </div>
+            </div>
+            <div id="slideUp" class="content">
+                <div class="innerone">
+                    <button class="slideUp">Click</button>
+                </div>
+                <div class="innertwo">
+                    <h1>Slide Up Content</h1>
+                    <p>Click the button to slide up this content!</p>
+                </div>
+            </div>
+            <div id="slideToggle" class="content">
+                <div class="innerone">
+                    <button class="slideToggle">Click</button>
+                </div>
+                <div class="innertwo">
+                    <h1>Toggle Slide Up and Down</h1>
+                    <p>Click the button to toggle this content!</p>
+                </div>
+            </div>
+            <div id="fadeIn" class="content">
+                <div class="innerone">
+                    <button class="fadeIn">Click</button>
+                </div>
+                <div class="innertwo">
+                    <h1>Fade In Content</h1>
+                    <p style="display: none;">This Content just faded in</p>
+                </div>
+            </div>
+            <div id="fadeOut" class="content">
+                <div class="innerone">
+                    <button class="fadeOut">Click</button>
+                </div>
+                <div class="innertwo">
+                    <h1>Fade Out Content</h1>
+                    <p>Click the button to fade this text out!</p>
+                </div>
+            </div>
+            <div id="addClass" class="content">
+                <div class="innerone">
+                    <button class="addClass">Click</button>
+                </div>
+                <div class="innertwo">
+                    <h1>Add Class to Div on Click</h1>
+                    <p>Click the button to add a red background class to this div!</p>
+                </div>
+            </div>
+            <div id="before" class="content">
+                <div class="innerone">
+                    <button class="before">Click</button>
+                </div>
+                <div class="innertwo">
+                    <h1>.before Function</h1>
                     <p>Click the button for some jQuery!</p>
                 </div>
             </div>
-            <div id="" class="content">
+            <div id="after" class="content">
                 <div class="innerone">
-                    <button class="">Click</button>
+                    <button class="after">Click</button>
                 </div>
                 <div class="innertwo">
-                    <h1>Click</h1>
+                    <h1>.after Function</h1>
                     <p>Click the button for some jQuery!</p>
                 </div>
             </div>
-            <div id="" class="content">
+            <div id="append" class="content">
                 <div class="innerone">
-                    <button class="">Click</button>
+                    <button class="append">Click</button>
                 </div>
                 <div class="innertwo">
-                    <h1>Click</h1>
+                    <h1>.append Function</h1>
+                    <p>Append the H1 to below the p on click!</p>
+                </div>
+            </div>
+            <div id="html" class="content">
+                <div class="innerone">
+                    <button class="html">Click</button>
+                </div>
+                <div class="innertwo">
+                    <h1>.html Function</h1>
+                    <p>Click the button to replace HTML</p>
+                </div>
+            </div>
+            <div id="attr" class="content">
+                <div class="innerone">
+                    <button class="attr">Click</button>
+                </div>
+                <div class="innertwo">
+                    <img src="http://www.hondahookup.com/images/100x100.jpg" />
                     <p>Click the button for some jQuery!</p>
                 </div>
             </div>
-            <div id="" class="content">
+            <div id="val" class="content">
                 <div class="innerone">
-                    <button class="">Click</button>
+                    <button class="val">Click</button>
                 </div>
                 <div class="innertwo">
-                    <h1>Click</h1>
-                    <p>Click the button for some jQuery!</p>
+                    <h1>.val Function</h1>
+                    <p>Click the function to change the value of the input to the text of the button</p>
+                    <input type="text" value="This is the Value of an input">
                 </div>
             </div>
-            <div id="" class="content">
+            <div id="text" class="content">
                 <div class="innerone">
-                    <button class="">Click</button>
+                    <button class="text">Click</button>
                 </div>
                 <div class="innertwo">
-                    <h1>Click</h1>
-                    <p>Click the button for some jQuery!</p>
+                    <h1>.text Function</h1>
+                    <p>Get the text from the header of this div, then set this paragraph to the contents of it</p>
                 </div>
             </div>
-            <div id="" class="content">
+            <div id="data" class="content">
                 <div class="innerone">
-                    <button class="">Click</button>
+                    <button class="data">Click</button>
                 </div>
                 <div class="innertwo">
-                    <h1>Click</h1>
-                    <p>Click the button for some jQuery!</p>
-                </div>
-            </div>
-            <div id="" class="content">
-                <div class="innerone">
-                    <button class="">Click</button>
-                </div>
-                <div class="innertwo">
-                    <h1>Click</h1>
-                    <p>Click the button for some jQuery!</p>
-                </div>
-            </div>
-            <div id="" class="content">
-                <div class="innerone">
-                    <button class="">Click</button>
-                </div>
-                <div class="innertwo">
-                    <h1>Click</h1>
-                    <p>Click the button for some jQuery!</p>
-                </div>
-            </div>
-            <div id="" class="content">
-                <div class="innerone">
-                    <button class="">Click</button>
-                </div>
-                <div class="innertwo">
-                    <h1>Click</h1>
-                    <p>Click the button for some jQuery!</p>
-                </div>
-            </div>
-            <div id="" class="content">
-                <div class="innerone">
-                    <button class="">Click</button>
-                </div>
-                <div class="innertwo">
-                    <h1>Click</h1>
-                    <p>Click the button for some jQuery!</p>
-                </div>
-            </div>
-            <div id="" class="content">
-                <div class="innerone">
-                    <button class="">Click</button>
-                </div>
-                <div class="innertwo">
-                    <h1>Click</h1>
-                    <p>Click the button for some jQuery!</p>
-                </div>
-            </div>
-            <div id="" class="content">
-                <div class="innerone">
-                    <button class="">Click</button>
-                </div>
-                <div class="innertwo">
-                    <h1>Click</h1>
-                    <p>Click the button for some jQuery!</p>
-                </div>
-            </div>
-            <div id="" class="content">
-                <div class="innerone">
-                    <button class="">Click</button>
-                </div>
-                <div class="innertwo">
-                    <h1>Click</h1>
-                    <p>Click the button for some jQuery!</p>
-                </div>
-            </div>
-            <div id="" class="content">
-                <div class="innerone">
-                    <button class="">Click</button>
-                </div>
-                <div class="innertwo">
-                    <h1>Click</h1>
-                    <p>Click the button for some jQuery!</p>
-                </div>
-            </div>
-            <div id="" class="content">
-                <div class="innerone">
-                    <button class="">Click</button>
-                </div>
-                <div class="innertwo">
-                    <h1>Click</h1>
-                    <p>Click the button for some jQuery!</p>
+                    <h1>.data Function</h1>
+                    <p>This tag should get a data attribute, and changes this content to the value of the data key</p>
                 </div>
             </div>
         </div>

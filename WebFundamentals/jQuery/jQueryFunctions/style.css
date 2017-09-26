@@ -16,6 +16,7 @@ p{
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+    height: 50%;
 }
 .innerone{
     width: 25%;
@@ -23,4 +24,15 @@ p{
 }
 .innerone button{
     padding: 20px 40px;
+    vertical-align: middle;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.red{
+    background-color: red;
+}
+
+.red h1, .red p{
+    color: #ffffff;
 }
