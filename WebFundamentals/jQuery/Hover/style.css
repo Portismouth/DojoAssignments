@@ -1,7 +1,10 @@
+body,html{
+    margin: 0;
+}
 .wrapper{
-    width: 100%;
     background: #ededed;
     text-align: center;
+    padding: 32px;
 }
 img{
     width: 100%;
