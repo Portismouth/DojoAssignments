@@ -16,21 +16,10 @@
   <![endif]-->
   <script>
   $(document).ready(function(){
-      /*
-        console.log($('.test').data('alt-src'))
-        $('.test').data('alt-src', 'img/cat0.png')
-        console.log($('.test').data('alt-src'))
-        $('.test').attr('src', $('.test').data('alt-src'))
-      */
-
-        
         $('img').click(function(){
-            $(this).addClass('flagged');
-            var temp =  $(this).attr('src') // set temp to current src
-            console.log(temp);
-            $(this).attr('src' , $(this).data('alt-src')) // sets image src to data alt src
-            $(this).data('alt-src', temp )
-            
+            var temp =  $(this).attr('src'); // set temp to current src
+            $(this).attr('src' , $(this).data('alt-src')); // sets image src to data alt src
+            $(this).data('alt-src', temp );  
       });
       
   });
