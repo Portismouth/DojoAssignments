@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Hover</title>
+  <meta name="description" content="Hover">
+  <meta name="author" content="Hover">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var sourceSwap = function () {
+                var $this = $(this);
+                var newSource = $this.data('alt-src');
+                $this.data('alt-src', $this.attr('src'));
+                $this.attr('src', newSource);
+            }
+            $(function () {
+                $('.block img').hover(sourceSwap, sourceSwap);
+        });
+        });
+    </script>
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png" alt="google" data-alt-src="http://tech21info.com/admin/wp-content/uploads/2013/03/chrome-logo-200x200.png"  />
+        </div>
+        <div class="block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png" alt="google" data-alt-src="http://davidnaylor.org/temp/firefox-logo-200x200.png"  /> 
+        </div>
+        <div class="block"> 
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png" alt="google" data-alt-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJXbLVVHaSE5Wlq0C17JenIcXTNNzK6hXynl6DPLDzIQ81KeK0XQ"  /> 
+        </div>
+        <div class="block">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png" alt="google" data-alt-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyUhWnoVymbHn0uBYuFgWQPVDh5dCSkhtwAwtBdrw7B-SHhQ88JQ"  />
+        </div>
+    </div>
+</body>
+</html>
