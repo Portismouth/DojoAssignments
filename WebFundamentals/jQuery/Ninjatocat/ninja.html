@@ -17,9 +17,10 @@
   <script>
   $(document).ready(function(){
         $('img').click(function(){
-            var temp =  $(this).attr('src'); // set temp to current src
-            $(this).attr('src' , $(this).data('alt-src')); // sets image src to data alt src
-            $(this).data('alt-src', temp ); // reset data to old src url
+            var newSource =  $(this).data('alt-src'); // Save the data source as new URL
+            $(this).data('alt-src', $(this).attr('src')); // Set the data source to the current URL
+            $(this).attr('src' , newSource); // Set source to the new URL saved as newSource
+            
       });
       
   });
