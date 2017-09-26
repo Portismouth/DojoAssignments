@@ -19,7 +19,7 @@
         $('img').click(function(){
             var temp =  $(this).attr('src'); // set temp to current src
             $(this).attr('src' , $(this).data('alt-src')); // sets image src to data alt src
-            $(this).data('alt-src', temp );  
+            $(this).data('alt-src', temp ); // reset data to old src url
       });
       
   });
