@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Card</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        $(document).ready(function(){
+            var inputs = $('input, textarea, select')
+                .not(':input[type=button], :input[type=submit], :input[type=reset]')
+            $('#submit').click(function(e){
+                e.preventDefault();
+                $(inputs).each(function(){
+                    console.log($(this).val())
+                });
+                $('#contacts').append(
+                        '<div class="card"><div class="front"><h1 class="contactName">'+$('#firstname').val() +' '+ $('#lastname').val()+'</h1><h3>Click for Description</h3></div><div class="description back hide">'+$('#description').val()+'</div></div>'
+                        ) 
+            });
+            $('#contacts').on('click' , '.card' , function(){
+                    $(this).children().toggle();
+                });
+        });
+            /*-----------------------------------------------------------------------------------------
+            
+            MARK AND MITCHELL PAIR PROGRAMMING
+            
+            -------------------------------------------------------------------------------------------*/
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <form id="form">
+            <label for="firstname">First Name:</label>
+            <input type="text" id="firstname" name="firstname"><br />
+            <label for="lastname">Last Name:</label>
+            <input type="text" id="lastname" name="lastname"><br />
+            <label for="description">Description</label><br />
+            <textarea type="textarea" id="description" name="description" placeholder="Enter Description"></textarea><br />
+            <input type="submit" value="Add User" id="submit">
+        </form>
+        <div id="contacts">
+        </div>
+    </div>
+</body>
+</html>
