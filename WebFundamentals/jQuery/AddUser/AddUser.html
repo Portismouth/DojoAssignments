@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add User</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<script>
+    $(document).ready(function(){
+        var inputs = $('input, textarea, select')
+                .not(':input[type=button], :input[type=submit], :input[type=reset]')
+        $('#submit').click(function(e){
+            e.preventDefault();
+            var newRow = '<tr></tr>'
+            $('table tbody').append(newRow);
+            $(inputs).each(function(){
+                console.log($(this).val())
+                $('table tbody tr:last-child').append('<td class="inner">'+$(this).val()+'</td>')
+            });
+        });
+    });
+</script>
+
+<body>
+    <div class="wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email Address</th>
+                    <th>Contact #</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr></tr>
+            </tbody>
+        </table>
+        <div class="form">
+            <h1>Add User</h1>
+            <form id="form">
+                <label for="firstname">First Name</label>
+                <input type="text" id="firstname" placeholder="First Name"><br/>
+                <label for="lastname">Last Name</label>
+                <input type="text" id="lastname" placeholder="Last Name"><br/>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Email Address"><br/>
+                <label for="phone">Contact No.</label>
+                <input type="phone" id="phone" placeholder="Phone #"><br/>
+                <input type="submit" id="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

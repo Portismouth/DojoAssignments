@@ -1,0 +1,29 @@
+body,html{
+    margin: 0;
+}
+.wrapper{
+    width: 900px;
+    background: #ededed;
+    margin: 0 auto;
+    text-align: center;
+    padding: 32px 0; 
+}
+.form{
+    width: 35%;
+    text-align: right;
+    margin: 0 auto;
+}
+.form h1{
+    text-align: left;
+    border-bottom: 3px solid;
+}
+table{
+    margin: 0 auto;
+    background: #ffffff;
+}
+th, td{
+    padding: 20px;
+}
+input{
+    margin-bottom: 10px;
+}
