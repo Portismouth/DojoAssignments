@@ -1,0 +1,79 @@
+html, body{
+    margin: 0;
+}
+div{
+    box-sizing: border-box;
+}
+.wrapper{
+    padding: 10px 20px;
+    text-align: center;
+}
+.content{
+    width: 500px;
+    margin: 0 auto;
+    border: 2px solid rgba(0,0,0,0.5);
+    margin-top: 50px;
+    padding: 30px 20px 20px 20px;
+    position: relative;
+    box-shadow: 4px 3px 5px rgba(0,0,0,0.3);
+}
+.content h4{
+    text-align: left;
+}
+h3{
+    margin-bottom: 0px;
+    margin-top: 32px;
+}
+h2{
+    position: absolute;
+    top: -25px;
+    margin: 0;
+    padding: 10px;
+    background: #fff;
+    border: 2px solid rgba(0,0,0,0.5);
+    box-shadow: 4px 3px 5px rgba(0,0,0,0.3);
+}
+.box{
+    width: 220px;
+    height: 264px;
+    display: inline-block;
+    background-size: 100%;
+    vertical-align: top;
+    cursor: pointer;
+}
+.box p{
+    position: relative;
+    top: -50px;
+    transition: 0.3s;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px #000000;
+}
+form{
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+.box.center p{
+    top: 50%;
+    transform: translateY(-50%);
+}
+#search{
+    width: 250px;
+}
+h4 span{
+    font-weight: 100;
+}
+input{
+    height: 32px;
+}
+.box.stark{
+    background-image:url('http://vignette4.wikia.nocookie.net/gameofthrones/images/8/8a/House-Stark-Main-Shield.PNG/revision/latest?cb=20170101103142');
+}
+.box.targaryen{
+    background-image:url('https://vignette.wikia.nocookie.net/gameofthrones/images/4/43/House-Targaryen-Main-Shield.PNG/revision/latest?cb=20170510235320');
+}
+.box.lannister{
+    background-image:url('https://vignette.wikia.nocookie.net/gameofthrones/images/8/8a/House-Lannister-Main-Shield.PNG/revision/latest?cb=20170101095357');
+}
+.box.baratheon{
+    background-image:url('https://qph.ec.quoracdn.net/main-qimg-2456dff00bb9274c08fda78b74c34eae');
+}

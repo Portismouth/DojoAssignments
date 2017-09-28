@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game Of Thrones</title>
+    <link rel='stylesheet' type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+    $('.content').hide();
+    //BOX CODE
+    $('.box').click(function(){
+        if(!$('.content').data('first')){
+            $(this).data('first', 'clicked');
+            $('.content').fadeIn();
+        }
+        var houseID = $(this).attr('houseid');
+        $.get('https://www.anapioficeandfire.com/api/houses/'+houseID, function(data){
+            $('.name').text(data.name);
+            $('.words').text(data.words);
+            $('.titles').text('');
+            for(var i in data.titles){
+                if(i > 0){
+                    $('.titles').append(', ');
+                } 
+                $('.titles').append(data.titles[i]); 
+            }
+        });
+    });
+    //SEARCH CODE
+    $('button').click(function(){
+        var houseName = $('#search').val().replace(/\s/g,'+');
+            $.get('https://www.anapioficeandfire.com/api/houses?name='+houseName, function(data){
+                var obj = data[0];
+                $('.name').text(obj.name);
+                $('.words').text(obj.words);
+                $('.titles').text('');
+                for(var i in obj.titles){
+                    if(i > 0){
+                        $('.titles').append(', ');
+                    } 
+                    $('.titles').append(obj.titles[i]); 
+                }
+            });
+        return false;
+    });
+
+    $('.box').hover(function(){
+        $('.box p').addClass('center');
+    }, function(){
+        $('.box p').removeClass('center');
+    });
+    $( ".box" ).hover(
+    function() {
+        $( this ).addClass( "center" );
+  }, function() {
+        $( this ).removeClass( "center" );
+  }
+);
+});
+ 
+    
+    
+    
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box stark" houseid="362">
+            <p>House Stark</p>
+        </div>
+        <div class="box targaryen" houseid="378">
+            <p>House Targaryen</p>>
+        </div>
+        <div class="box lannister" houseid="229">
+            <p>House Lannister</p>>
+        </div>
+        <div class="box baratheon" houseid="17">
+            <p>House Baratheon</p>
+        </div>
+        <h3>Don't see your favorite house? Search below.</h3>
+        <em>(please be careful to search the EXACT house name.)</em><br />
+        <form>
+                    <input type="search" id="search" placeholder="ex. House Stark of Winterfell">
+                    <button>Search</button>
+        </form>
+        <div class="content">
+            <h2>House Detailes</h2>
+            <h4>Name: <span class="name"></span></h4>
+            <h4>Words: <span class="words"></span></h4>
+            <h4>Titles: <span class="titles"></span></h4>
+        </div>
+    </div>
+</body>
+</html>
