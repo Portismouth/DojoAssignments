@@ -1,3 +1,50 @@
 img{
     display: inline-block;
+    width: 120px;
+    cursor: pointer;
+}
+.wrapper{
+    width: 100%;
+}
+div{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+}
+.pokemon, .pokedex{
+    display: inline-block;
+    vertical-align: top;
+}
+.pokemon{
+    width: 59%;
+    margin-right: 4%;
+    text-align: center;
+}
+.pokemon img{
+    float: left;
+}
+.pokedex{
+    width: 30%;
+    padding: 20px;
+    border: 10px solid red;
+    position: fixed;
+}
+.pokedex h1{
+    text-align: center;
+}
+.pokedex p{
+    padding-left: 30px;
+}
+.name{
+    text-align: center;
+}
+
+@media screen and (max-width: 949px) {
+    .pokemon, .pokedex{
+        width: 100%;
+        margin: 0;
+    }
+    .pokedex{
+        position: relative;
+    }
 }

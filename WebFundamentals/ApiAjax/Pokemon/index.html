@@ -5,25 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pokemon</title>
+    <link rel='stylesheet' type="text/css" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
-        $(document).ready(function(){
 
+$(document).ready(function(){
+
+            //LOOP THROUGH AND POST ALL 151 POKEMON
             function getPokemon151(){
                 for(var i = 1; i <= 151; i++){
-                    $('.wrapper').append(
-                        '<img src="http://pokeapi.co/media/img/'+i+'.png" />'
-                    )
+                    $('.pokemon').append('<img id='+i+' src="http://pokeapi.co/media/sprites/pokemon/shiny/'+i+'.png" />')
                 }
             }
-            getPokemon151();
 
-        });
+            // CHECK NAME OF POKEMON
+            $('.pokemon').on('click', 'img', function(){
+                var pokeID = $(this).attr('id')
+                var proxyurl = "https://cors-anywhere.herokuapp.com/";
+                var url = "http://pokeapi.co/api/v2/pokemon/"+pokeID;
+                $('.types ul').html('');
+                $('.height p').html('');
+                $('.weight p').html('');
+                $('.name img').replaceWith('');
+                $('.pokedex h1').css('textTransform', 'capitalize');
+                $.get(proxyurl+url, function(data) 
+                {
+                    $('.name').append('<img src="'+data.sprites.front_default+'" />')
+                    $('.height').append('<p>'+data.height+'</p>')
+                    $('.weight').append('<p>'+data.weight+'</p>')
+                    for(var i in data.types){
+                        console.log(data.types[i].type.name);
+                        $('.pokedex h1').text(data.name)
+                        $('.types .typesList').append('<li>'+data.types[i].type.name+'</li>')
+                    }
+                }, "json");
+            
+            });
+            
+
+
+            getPokemon151();
+            
+});
+
 
     </script>
 </head>
 <body>
     <div class="wrapper">
+        <div class="pokemon">
+
+        </div>
+        <div class="pokedex">
+            <div class="name">
+                <h1>Pokemon Name</h1>
+            </div>
+            <div class="types">
+                <h4>Types</h4>
+                <ul class="typesList"></ul>
+            </div>
+            <div class="height">
+                <h4>Height</h4>
+            </div>
+            <div class="weight">
+                <h4>Weight</h4>
+            </div>
+        </div>
     </div>
 </body>
 </html>
