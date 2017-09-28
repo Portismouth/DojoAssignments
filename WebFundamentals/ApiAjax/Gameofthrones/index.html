@@ -10,12 +10,15 @@
     <script>
     $(document).ready(function(){
     $('.content').hide();
-    //BOX CODE
-    $('.box').click(function(){
+    function showBox(){
         if(!$('.content').data('first')){
             $(this).data('first', 'clicked');
             $('.content').fadeIn();
         }
+    }
+    //BOX CODE
+    $('.box').click(function(){
+        showBox();
         var houseID = $(this).attr('houseid');
         $.get('https://www.anapioficeandfire.com/api/houses/'+houseID, function(data){
             $('.name').text(data.name);
@@ -31,6 +34,7 @@
     });
     //SEARCH CODE
     $('button').click(function(){
+        showBox();
         var houseName = $('#search').val().replace(/\s/g,'+');
             $.get('https://www.anapioficeandfire.com/api/houses?name='+houseName, function(data){
                 var obj = data[0];
@@ -42,6 +46,25 @@
                         $('.titles').append(', ');
                     } 
                     $('.titles').append(obj.titles[i]); 
+                }
+            });
+        return false;
+    });
+    // RANDOM CODE
+    $('button.random').click(function(){
+        showBox();
+        var randomHouse = Math.floor(Math.random() * 378) + 1;
+        $('.name').text('');
+        console.log(randomHouse)
+            $.get('https://www.anapioficeandfire.com/api/houses/'+randomHouse.toString(), function(data){
+                $('.name').text(data.name);
+                $('.words').text(data.words);
+                $('.titles').text('');
+                for(var i in data.titles){
+                    if(i > 0){
+                        $('.titles').append(', ');
+                    } 
+                    $('.titles').append(data.titles[i]); 
                 }
             });
         return false;
@@ -84,7 +107,8 @@
         <em>(please be careful to search the EXACT house name.)</em><br />
         <form>
                     <input type="search" id="search" placeholder="ex. House Stark of Winterfell">
-                    <button>Search</button>
+                    <button class="search">Search</button>
+                    <button class="random">Random</button>
         </form>
         <div class="content">
             <h2>House Detailes</h2>
