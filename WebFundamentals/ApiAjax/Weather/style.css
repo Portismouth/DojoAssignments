@@ -1,0 +1,31 @@
+body, html{
+    margin: 0;
+    height: 100%;
+}
+.wrapper{
+    width: 900px;
+    background: #ededed;
+    padding: 32px;
+}
+h1{
+    margin-top: 0px;
+}
+.temperature p{
+    display: inline-block;
+    background: #fff;
+}
+.temperature{
+    display: none;
+}
+.temperature.show{
+    display: block;
+}
+input{
+    width: 200px;
+    height: 50px
+}
+input[type=submit] {
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+}

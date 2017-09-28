@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather</title>
+    <link rel='stylesheet' type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('form').submit(function() {
+                // your code here (build up your url)
+                var city= $('#input').val();
+                var url="http://api.openweathermap.org/data/2.5/weather?q="+city+"id=524901&APPID=5ca1523bd8e00500e46f40b8ceeec5b0"
+                $('.temperature').addClass('show');
+                $.get(url, function(data) {
+                    // your code here
+                    if (!$.trim(data)){   
+                        alert('Please Enter a Valid City');
+                    } else {
+                    console.log("response")
+                    var temperature = data.main.temp;
+                    var fahrenheit = Math.round(temperature * 9/5 - 459.67);
+                    var celcius = Math.round(temperature - 273.15);
+                    $('.f').text(fahrenheit);
+                }
+                }, 'json');
+                // don't forget to return false so the page doesn't refresh
+                return false;
+         });
+    });
+
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="content">
+            <h1>Check The Weather in Any City!</h1>
+            <form>
+                <input type="text" id="input" name="input" placeholder="San Franscisco...">
+                <input type="submit" id="submit" value="Submit!">
+            </form>
+        </div>
+        <div class="temperature">
+            <h3>Temperature: <strong><span class="f"> Please Enter a Valid City</span></strong></h3>
+        </div>
+    </div>
+</body>
+</html>
