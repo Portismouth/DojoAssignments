@@ -33,7 +33,7 @@
         });
     });
     //SEARCH CODE
-    $('button').click(function(){
+    $('button.search').click(function(){
         showBox();
         var houseName = $('#search').val().replace(/\s/g,'+');
             $.get('https://www.anapioficeandfire.com/api/houses?name='+houseName, function(data){
@@ -53,10 +53,10 @@
     // RANDOM CODE
     $('button.random').click(function(){
         showBox();
-        var randomHouse = Math.floor(Math.random() * 378) + 1;
-        $('.name').text('');
+        var randomHouse = Math.floor(Math.random() * 444) + 1;
         console.log(randomHouse)
             $.get('https://www.anapioficeandfire.com/api/houses/'+randomHouse.toString(), function(data){
+                console.log(data.name);
                 $('.name').text(data.name);
                 $('.words').text(data.words);
                 $('.titles').text('');
@@ -68,12 +68,6 @@
                 }
             });
         return false;
-    });
-
-    $('.box').hover(function(){
-        $('.box p').addClass('center');
-    }, function(){
-        $('.box p').removeClass('center');
     });
     $( ".box" ).hover(
     function() {
