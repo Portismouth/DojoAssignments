@@ -76,42 +76,6 @@
         }
         displayWorld();
 
-        // function movePac(){
-        //     document.addEventListener('keydown', function(event) {
-        //             console.log('keydown');
-        //     }, false);
-        // }
-        // movePac();
-
-        function move() {
-
-        }
-        document.onkeydown = function(e) {
-            var pacman = document.getElementById('pacman');
-            switch (e.keyCode) {
-                case 37:
-                    pacman.parentNode.insertBefore(pacman,world[2][3]);
-
-                    break;
-                case 38:
-                    alert('up');
-                    break;
-                case 39:
-                    alert('right');
-                    break;
-                case 40:
-                    alert('down');
-                    break;
-            }
-        };
-       
-        var map = document.getElementById('world')
-        function play(){
-            for (var x = 0; x < map.length; x++){
-                console.log(x);
-            }
-        } play()
-
     </script>
 </body>
 </html>
