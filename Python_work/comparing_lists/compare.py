@@ -1,28 +1,15 @@
-def type_list(val):
-    if all(isinstance(x, int) for x in val):
-        print "This is a list of integers"
-        print sum(val)
-    elif all(isinstance(x, str) for x in val):
-        print "This is a list of strings"
-        print ' '.join(val)
+def compare(list1, list2):
+    for i, x in map(None,list1, list2):
+        if i == x:
+            same = True
+        else:
+            same = False
+    if same:
+        print "The Lists are the same"
     else:
-        print "This is a mixed list"
-        num = 0
-        string = ''
-        for x in val:
-            if type(x) == int:
-                num += x
-            else:
-                string += x + ' '
-        print 'Sum:', num
-        print 'String:', string
-
-        
+        print "The lists are different"
 
 
-
-l1 = ['magical unicorns',19,'hello',98.98,'world']
-l2 = [2,3,1,7,4,12]
-l3 = [1,2,"hello",3,4,"world",5,6,"coding",7,8,"dojo"]
-l4 = ["HELLO", "WORLD"]
-type_list(l3)
+list_one = ['celery','carrots','bread','milk']
+list_two = ['celery','carrots','bread','cream']
+compare(list_one,list_two)
