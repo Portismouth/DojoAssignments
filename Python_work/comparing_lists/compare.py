@@ -10,6 +10,6 @@ def compare(list1, list2):
         print "The lists are different"
 
 
-list_one = ['celery','carrots','bread','milk']
+list_one = ['celery','carrots','bread','milk', ]
 list_two = ['celery','carrots','bread','cream']
 compare(list_one,list_two)
