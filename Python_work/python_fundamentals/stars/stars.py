@@ -1,6 +1,5 @@
 
 def draw_stars(x):
-    
     for item in x:
         temp = ""        
         if isinstance(item, int):
