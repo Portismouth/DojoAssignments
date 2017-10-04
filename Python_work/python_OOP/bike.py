@@ -19,16 +19,15 @@ class Bike(object):
 
 Bike1 = Bike(200,"25mph")
 Bike1.ride().ride().ride().reverse()
+Bike1.displayInfo()
 
 Bike2 = Bike(150,"20mph")
 Bike2.ride().ride().reverse()
+Bike2.displayInfo()
 
 Bike3 = Bike(125,"15mph")
 Bike3.reverse().reverse().reverse()
+Bike3.displayInfo()
 
-
-print Bike1.displayInfo()
-print Bike2.displayInfo()
-print Bike3.displayInfo()
 
 
