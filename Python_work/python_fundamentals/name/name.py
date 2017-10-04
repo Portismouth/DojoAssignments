@@ -8,10 +8,8 @@ students = [
 ]
 def names(lst):
     for student in lst:
-        print student['first_name'], student['last_name']
-
-
-# names(students)
+        print ' '.join(student.values())
+#names(students)
 
 
 # Part 2
@@ -32,5 +30,8 @@ def names(lst):
     for key, value in lst.iteritems():
         print key
         for names in value:
-            print value.index(names)+1, "-",names['first_name'], names['last_name'], "-", len(names['first_name'])+len(names['last_name'])
+            count = value.index(names)+1
+            names = " ".join(names.values())
+            length = len(names)
+            print "{} - {} - {}".format(count, names, length)
 names(users)

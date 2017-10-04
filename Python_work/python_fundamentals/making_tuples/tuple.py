@@ -8,4 +8,5 @@ def dict_tuple(dictionary):
     for key, value in dictionary.iteritems():
         tuple_list.append((key,value))
     print tuple_list
+
 dict_tuple(my_dict)
