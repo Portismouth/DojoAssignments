@@ -1,0 +1,15 @@
+<html>
+    <head>
+       <title>index</title>
+       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+    <div class="content">
+        <form action="/process" method="POST">
+            <input type="text" name="name">
+            <input type="text" name="language">
+            <input type="submit">
+        </form>
+    </div>
+    </body>
+</html>
