@@ -1,0 +1,23 @@
+<html>
+    <head>
+       <title>Form Submit Index</title>
+       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+    <div class="content">
+      <!-- read on to learn about form actions, we'll talk about the method in a later section -->
+        <form action='/form_submit' method='post'>
+            Name: <input type='text' name='name'><br />
+            Dojo Location: <select name="location">
+                <option value="San Jose">San Jose</option>
+                <option value="Chicago">Chicago</option>
+                <option value="New York">New York</option>
+            </select><br />
+            Language: <input type='text' name='language'><br />
+            Message:<br />
+            <textarea name="message" cols="30" rows="10"></textarea><br />
+            <input type='submit' value='create user'><br />
+        </form>
+    </div>
+    </body>
+</html>
