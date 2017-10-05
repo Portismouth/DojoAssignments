@@ -1,0 +1,23 @@
+<html>
+    <head>
+       <title>Result</title>
+       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+    <div class="content">
+            <div class="content">
+                {% if color == "red" %}
+                  <img src="{{ url_for('static', filename='images/raphael.png')}}" />
+                {% elif color == "blue" %}
+                  <img src="{{ url_for('static', filename='images/leonardo.png')}}" />
+                {% elif color == "orange" %}
+                  <img src="{{ url_for('static', filename='images/michaelangelo.png')}}" />
+                {% elif color == "purple" %}
+                  <img src="{{ url_for('static', filename='images/donatello.png')}}" />
+                {% else %}
+                  <img src="{{ url_for('static', filename='images/notapril.jpg')}}" />
+                {% endif %}
+            </div>
+    </div>
+    </body>
+</html>
