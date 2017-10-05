@@ -1,0 +1,16 @@
+<html>
+    <head>
+       <title>Form Test Index</title>
+       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+      <h1>Are you a new ninja??</h1>
+      <h3>Sign Up!</h3>
+      <!-- read on to learn about form actions, we'll talk about the method in a later section -->
+      <form action='/form_submit' method='post'>
+          Name: <input type='text' name='name'>
+          Email: <input type='text' name='email'>
+          <input type='submit' value='create user'>
+      </form>
+    </body>
+</html>

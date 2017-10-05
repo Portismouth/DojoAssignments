@@ -1,0 +1,16 @@
+img{
+    display: inline;
+}
+p{
+    width: 75%;
+    display: inline-block
+}
+.one p{
+    color: red;
+}
+.two p{
+    color: blue
+}
+.three p{
+    color: green
+}
