@@ -6,10 +6,24 @@
     <body>
     <div class="content">
         <form action="/process" method="POST">
-            <input type="text" name="name">
-            <input type="text" name="language">
+            Name: <input type="text" name="name"><br />
+            Location: <select name="location">
+                <option value="San Jose">San Jose</option>
+                <option value="Chicago">Chicago</option>
+                <option value="New York">New York</option>
+            </select><br />
+            Favorite Language: <input type="text" name="language"><br />
+            Comments: <br />
+            <textarea name="comments"></textarea><br />
             <input type="submit">
         </form>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}
+              <p style="color: red">{{message}}</p>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
     </div>
     </body>
 </html>
