@@ -1,0 +1,18 @@
+.wrapper{
+    text-align: center
+}
+
+.box{
+    display: inline-block;
+    width: 22%;
+    text-align: center;
+    border: 2px solid
+}
+.log{
+    overflow: scroll;
+    height: 300px;
+    width: 90%;
+    margin: 0 auto;
+    border: 2px solid;
+    margin-top: 32px;
+}
