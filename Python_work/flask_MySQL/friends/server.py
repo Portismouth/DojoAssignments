@@ -5,7 +5,7 @@ mysql = MySQLConnector(app,'friendsdb')
 
 @app.route('/')
 def index():
-    query = "SELECT * FROM friends"
+    query = "SELECT id, first_name, last_name, age, DATE(created_at) AS since FROM friends "
     friends = mysql.query_db(query) 
     return render_template('index.html', all_friends=friends)
 
@@ -13,12 +13,12 @@ def index():
 def create():
     # Write query as a string. Notice how we have multiple values
     # we want to insert into our query.
-    query = "INSERT INTO friends (first_name, last_name, occupation, created_at, updated_at) VALUES (:first_name, :last_name, :occupation, NOW(), NOW())"
+    query = "INSERT INTO friends (first_name, last_name, age, created_at, updated_at) VALUES (:first_name, :last_name, :age, NOW(), NOW())"
     # We'll then create a dictionary of data from the POST data received.
     data = {
              'first_name': request.form['first_name'],
              'last_name':  request.form['last_name'],
-             'occupation': request.form['occupation']
+             'age': request.form['age']
            }
     # Run query, with dictionary values injected into the query.
     mysql.query_db(query, data)
@@ -27,11 +27,11 @@ def create():
 @app.route('/update_friend/<friend_id>', methods=['GET','POST'])
 def update(friend_id):
     if request.method == 'POST':
-        query = "UPDATE friends SET first_name = :first_name, last_name = :last_name, occupation = :occupation WHERE id = :id"
+        query = "UPDATE friends SET first_name = :first_name, last_name = :last_name, age = :age WHERE id = :id"
         data = {
                 'first_name': request.form['first_name'],
                 'last_name':  request.form['last_name'],
-                'occupation': request.form['occupation'],
+                'age': request.form['age'],
                 'id': friend_id
             }
         mysql.query_db(query, data)
