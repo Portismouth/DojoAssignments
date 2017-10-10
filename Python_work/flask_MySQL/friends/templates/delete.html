@@ -1,0 +1,15 @@
+<html>
+    <head>
+      <title>Update Friends</title>
+    </head>
+    <body>
+      <h2>Delete a Friend</h2>
+      <p>ID: {{friend_id}}</p>
+      <p>First Name: {{ friend['first_name'] }}</p>
+      <p><em>be careful this is permanent</em></p>
+      <hr>
+      <form action='/delete_friend/{{friend_id}}' method='POST'>
+        <input type="submit" value="Delete">
+      </form>
+    </body>
+</html>

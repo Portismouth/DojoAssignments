@@ -56,6 +56,7 @@ def submit():
         session['email'] = ""
         session['first_name'] = ""
         session['last_name'] = ""
+        session['date'] = ""
         session['password'] = ""
         session['confirm'] = ""
         
