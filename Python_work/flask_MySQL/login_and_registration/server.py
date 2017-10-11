@@ -1,6 +1,7 @@
 from flask import Flask, request, redirect, render_template, session, flash
 from mysqlconnection import MySQLConnector
 import md5
+import re
 app = Flask(__name__)
 mysql = MySQLConnector(app,'login')
 app.secret_key = 'KeepItSecretKeepItSafe'
@@ -18,9 +19,10 @@ def success():
 def register():
     first_name = request.form['first_name']
     last_name = request.form['last_name']
-    email = request.form['email']
-    password = md5.new(request.form['password']).hexdigest()
-    confirm = md5.new(request.form['confirm']).hexdigest()
+    email = request.form['email'].lower()
+    match = re.match('^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$', email)
+    password = request.form['password']
+    confirm = request.form['confirm']
     success = True
     if len(email) < 1 or len(first_name) < 1 or len(last_name) < 1 or len(password) < 1 or len(confirm) < 1:
         flash('Please fill out all fields', "register")
@@ -34,11 +36,15 @@ def register():
     if password != confirm:
         flash('Passwords need to match', 'register')
         success = False
+    if match == None:
+        flash('Email is not valid!', 'register')
+        return redirect('/')
     if success:
+        password = md5.new(password).hexdigest()
         insert_query = "INSERT INTO users (first_name, last_name, email, password) VALUES ('{}','{}','{}','{}')".format(first_name, last_name, email, password)
         mysql.query_db(insert_query)
         user_query = "SELECT * FROM users where users.email = '{}' AND users.password = '{}'".format(email,password)
-        session['user'] = mysql.query_db(user_query)
+        session['user'] = mysql.query_db(user_query)[0]
         return redirect('/success')
     
     return redirect('/')
