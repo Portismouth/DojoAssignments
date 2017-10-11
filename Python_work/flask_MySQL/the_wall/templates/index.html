@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Page</title>
+</head>
+<body>
+    <h1>Register</h1>
+    <form action="/register" method="post">
+        <label for="first_name">First Name: </label><input type="text" name="first_name" id="first_name"><br />
+        <label for="last_name">Last Name: </label><input type="text" name="last_name" id="last_name"><br />
+        <label for="email">Email: </label><input type="email" name="email" id="email"><br />
+        <label for="password">Password: </label><input type="password" name="password" id="password"><br />
+        <label for="confirm">Confirm: </label><input type="password" name="confirm" id="confirm"><br />
+        <input type ="submit" value="register">
+    </form>
+    {% with messages = get_flashed_messages(category_filter=["register"]) %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+            <li style="color: red">{{message}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    <hr>
+    <h1>Login</h1>
+    {% if not session['user'] %}
+    <form action="/login" method="post">
+        <label for="email">Email: </label><input type="email" name="email" id="email"><br />
+        <label for="password">Password: </label><input type="password" name="password" id="password"><br />
+        <input type ="submit" value="login">
+    </form>
+    {% else %}
+        <p>{{session['user']['first_name']}} is logged in</p>
+        <form action="/logout" method="POST">
+            <input type="submit" value="logout">
+        </form>
+    {% endif %}
+    {% with errors = get_flashed_messages(category_filter=["login"]) %}
+      {% if errors %}
+        {% for msg in errors %}
+        <p style="color: red">{{msg}}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+</body>
+</html>
