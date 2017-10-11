@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Email Verification</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Type in email to see if it is on our list</h1>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div style="background: red;">
+        {% for message in messages %}
+        <h1 style=" color: #ffffff;  padding: 10px 20px;">{{message}}</h1>
+        {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith%}
+        <form action="/verification" method="POST">
+            <label for="email">Emaill Address: </label><input type="email" name="email" id="email" >
+            <input type="submit" id="submit">
+        </form>
+    </div>
+</body>
+</html>

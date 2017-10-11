@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SUCCESS</title>
+</head>
+<body>
+    <h1>EMAIL ON LIST</h1>
+    <h3>{{session['message']}}</h3>
+    {% for item in queries %}
+    <div>
+    <p style="display:inline">{{item['email']}}</p>
+    <p style="display:inline">{{item['times']}}</p>
+    <form style="display:inline" action="/delete/{{item['id']}}" method="POST">
+        <input type="submit" value="delete">
+    </form>
+    </div>
+    {% endfor %}
+</body>
+</html>
