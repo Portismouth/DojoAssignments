@@ -28,26 +28,26 @@
     <hr>
     <div class="wall" style="width: 100%;">
         {% for message in messages %}
-        {% if message['message'] != None %}
-        <div style="border: 2px solid; margin: 32px 0;padding: 20px;">
-        <p>{{message['message']}}</p>
-        <p style="text-align: right"><em>{{message['first_name']}}<br />{{message['created_at']}}</em></p>
-        </div>
-        {% for r in reply%}
-               {% if r['message_id'] == message['message_id'] and r['comments'] != None %}
-               <div style="width: 33%; padding: 10px;margin: 16px;border: 2px solid">
-                <p>{{r['comments']}}</p>
-                <p style="text-align: right"><em>{{r['user']}}<br />{{r['created_at']}}</em></p>
-               </div>
-               {% endif %}
-        {% endfor %}
-        <form style="text-align:left" action="/comment/{{session['user']['id']}}" method="POST">
-            <label for="message">Reply</label><br>
-            <input type="hidden" name="hidden" value="{{message['message_id']}}">
-            <textarea rows="3" cols="50" name="comment" id="comment" placeholder="Reply to this comment"></textarea><br>
-            <input type="submit" id="submit">
-        </form>
-        {% endif %}
+            {% if message['message'] != None %}
+                <div style="border: 2px solid; margin: 32px 0;padding: 20px;">
+                <p>{{message['message']}}</p>
+                <p style="text-align: right"><em>{{message['first_name']}}<br />{{message['created_at']}}</em></p>
+                </div>
+            {% for r in reply%}
+                {% if r['message_id'] == message['message_id'] and r['comments'] != None %}
+                    <div style="width: 33%; padding: 10px;margin: 16px;border: 2px solid">
+                        <p>{{r['comments']}}</p>
+                        <p style="text-align: right"><em>{{r['user']}}<br />{{r['created_at']}}</em></p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+                <form style="text-align:left" action="/comment/{{session['user']['id']}}" method="POST">
+                    <label for="message">Reply</label><br>
+                    <input type="hidden" name="hidden" value="{{message['message_id']}}">
+                    <textarea rows="3" cols="50" name="comment" id="comment" placeholder="Reply to this comment"></textarea><br>
+                    <input type="submit" id="submit">
+                </form>
+            {% endif %}
         {% endfor %}
     </div>
 </body>

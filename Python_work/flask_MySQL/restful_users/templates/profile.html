@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Wall</title>
+</head>
+<body>
+    <div class="header">
+    <ul>
+        <li>ID: {{session['user']['id']}}</li>
+        <li>Name: {{session['user']['first_name']}} {{session['user']['last_name']}}</li>
+        <li>email: {{session['user']['email']}}</li>
+    </ul>
+    <form action="/logout" method="POST">
+        <input type="submit" value="logout">
+    </form>
+    </div>
+    <hr>
+</body>
+</html>
