@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey Form</title>
+    {% load static %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'survey/css/style.css' %}" />
+    <script src="{% static 'survey/javascript/custom.js' %}"></script>
+</head>
+<body>
+    <p class="red">Page Loaded: If css loaded this should be red</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <form action="/process" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="name">Your Name:</label>
+                        <input class="form-control" type="text" name="name" id="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Your Location:</label>
+                        <select class="form-control" name="location" id="location">
+                            <option value="San Jose">San Jose</option>
+                            <option value="Austin">Austin</option>
+                            <option value="Chicago">Chicago</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="language">Your favorite language:</label>
+                        <select class="form-control" name="language" id="language">
+                            <option value="Python">Python</option>
+                            <option value="Javasript">Javascript</option>
+                            <option value="Ruby">Ruby</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your message:</label>
+                        <textarea class="form-control" name="message" id="message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

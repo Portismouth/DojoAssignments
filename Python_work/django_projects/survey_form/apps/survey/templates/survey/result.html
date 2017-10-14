@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey Form</title>
+    {% load static %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'survey/css/style.css' %}" />
+    <script src="{% static 'survey/javascript/custom.js' %}"></script>
+</head>
+<body>
+    <p class="red">Page Loaded: If css loaded this should be red</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <h3>Submitted information</h3>
+                <table>
+                    <tr>
+                        <td>Name: </td>
+                        <td>{{ request.session.name }}</td>
+                    </tr>
+                    <tr>
+                        <td>Location: </td>
+                        <td>{{ request.session.location }}</td>
+                    </tr>
+                    <tr>
+                        <td>Language: </td>
+                        <td>{{ request.session.language }}</td>
+                    </tr>
+                    <tr>
+                        <td>Message: </td>
+                        <td>{{ request.session.message }}</td>
+                    </tr>
+                </table><br />
+                <a href="/" class="btn btn-default">Go Back</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
