@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ninja Gold</title>
+    {% load static %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'gold_app/css/style.css' %}" />
+    <script src="{% static 'gold_app/javascript/custom.js' %}"></script>
+</head>
+<body>
+    <p class="red">Page Loaded: If css loaded this should be red</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Gold: {{request.session.gold}}</h3>
+                <form action="/clear" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-default">Reset</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 border">
+                <h3>Farm</h3>
+                <p>(earns 10-20 gold)</p>
+                <form action="/process_money" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="hidden" value="farm">
+                    <button type="submit" class="btn btn-default">Find Gold</button>
+                </form>
+            </div>
+            <div class="col-md-3 border">
+                <h3>Cave</h3>
+                <p>(earns 5-10 gold)</p>
+                <form action="/process_money" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="hidden" value="cave">
+                    <button type="submit" class="btn btn-default">Find Gold</button>
+                </form>
+            </div>
+            <div class="col-md-3 border">
+                <h3>House</h3>
+                <p>(earns 2-5 gold)</p>
+                <form action="/process_money" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="hidden" value="house">
+                    <button type="submit" class="btn btn-default">Find Gold</button>
+                </form>
+            </div>
+            <div class="col-md-3 border">
+                <h3>Casino</h3>
+                <p>(earns/takes 0-50 gold)</p>
+                <form action="/process_money" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="hidden" value="casino">
+                    <button type="submit" class="btn btn-default">Find Gold</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p>Activities</p>
+                <div class="scroll">
+                    {% for message in request.session.action %}
+                    <p>{{message}}</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
