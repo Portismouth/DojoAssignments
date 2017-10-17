@@ -45,11 +45,7 @@ def register(request):
             salt =  binascii.b2a_hex(os.urandom(15))
             hashed_pw = md5.new(password + salt).hexdigest()
             User.objects.create(first_name=first_name, last_name=last_name,email=email, username=username, password=hashed_pw)
-            print User.objects.all()
-            print "success"
             return redirect('/')
-        print first_name
-        print "FAIL"
         return redirect('/')
     else:
         return redirect('/')
