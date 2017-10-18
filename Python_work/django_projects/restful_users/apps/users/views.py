@@ -43,7 +43,6 @@ def show(request, id):
 
 def edit(request, id):
     if request.method == "POST":
-        print "is it posting?"
         first_name = request.POST['first_name']
         last_name = request.POST['last_name']
         email = request.POST['email'].lower()
