@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>books</title>
+    {% load static %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'users/css/style.css' %}" />
+    <script src="{% static 'users/javascript/custom.js' %}"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-login">
+                    <div class="col-md-4">
+                        <h3>Welcome, <a href="{% url 'users:show' User.id %}">{{User.first_name}}<a/></h3>
+                    </div>
+                    <div class="col-md-8" style="text-align: right;margin-top: 20px;margin-bottom: 10px;">
+                            <a href="{% url 'books:new' %}" class="btn btn-default home-btn">Add a new book</a> <a href="{% url 'users:logout' %}" class="btn btn-default home-btn">logout</a>
+                    </div>
+                </div>        
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p>Your Book Shelf</p>
+                <table class="table">
+                    <tr>
+                        <th>Books</th>
+                        <th>Author</th>
+                        <th>Rating</th>
+                        <th>Actions</th>
+                    </tr>
+                    {% for book in user_books %}
+                    <tr>
+                        <td><a href="{% url 'books:show' book.id %}">{{book.name}}</a></td>
+                        <td>{{book.author}}</td>
+                        <td>{{book.avg}}</td>
+                        <td><a class="btn btn-default" href="{% url 'books:delete' book.id %}">delete</a> 
+                            {% if book.id not in reviews %}
+                            <a class="btn btn-default" href="{% url 'books:edit' book.id %}">review</a></td>
+                            {% endif %}
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p>Other Books</p>
+                <table class="table">
+                    <tr>
+                        <th>Books</th>
+                        <th>Author</th>
+                        <th>Rating</th>
+                        <th>Actions</th>
+                    </tr>
+                    {% for book in Books %}
+                    <tr>
+                        <td><a href="{% url 'books:show' book.id %}">{{book.name}}</a></td>
+                        <td>{{book.author}}</td>
+                        <td>{{book.avg}}</td>
+                        <td><a class="btn btn-default" href="{% url 'books:add' book.id %}">Add to shelf</a> 
+                        {% if book.id not in reviews %}
+                            <a class="btn btn-default" href="{% url 'books:edit' book.id %}">review</a></td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
