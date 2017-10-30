@@ -1,0 +1,8 @@
+/Users/Mitchell/Desktop/DojoAssignments/netCore/CollectionsPractice/bin/Debug/netcoreapp1.1/CollectionsPractice.deps.json
+/Users/Mitchell/Desktop/DojoAssignments/netCore/CollectionsPractice/bin/Debug/netcoreapp1.1/CollectionsPractice.runtimeconfig.json
+/Users/Mitchell/Desktop/DojoAssignments/netCore/CollectionsPractice/bin/Debug/netcoreapp1.1/CollectionsPractice.runtimeconfig.dev.json
+/Users/Mitchell/Desktop/DojoAssignments/netCore/CollectionsPractice/bin/Debug/netcoreapp1.1/CollectionsPractice.dll
+/Users/Mitchell/Desktop/DojoAssignments/netCore/CollectionsPractice/bin/Debug/netcoreapp1.1/CollectionsPractice.pdb
+/Users/Mitchell/Desktop/DojoAssignments/netCore/CollectionsPractice/obj/Debug/netcoreapp1.1/CollectionsPractice.AssemblyInfo.cs
+/Users/Mitchell/Desktop/DojoAssignments/netCore/CollectionsPractice/obj/Debug/netcoreapp1.1/CollectionsPractice.dll
+/Users/Mitchell/Desktop/DojoAssignments/netCore/CollectionsPractice/obj/Debug/netcoreapp1.1/CollectionsPractice.pdb
