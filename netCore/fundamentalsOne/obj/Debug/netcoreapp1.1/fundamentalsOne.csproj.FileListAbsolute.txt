@@ -1,0 +1,8 @@
+/Users/Mitchell/Desktop/DojoAssignments/netCore/fundamentalsOne/bin/Debug/netcoreapp1.1/fundamentalsOne.deps.json
+/Users/Mitchell/Desktop/DojoAssignments/netCore/fundamentalsOne/bin/Debug/netcoreapp1.1/fundamentalsOne.runtimeconfig.json
+/Users/Mitchell/Desktop/DojoAssignments/netCore/fundamentalsOne/bin/Debug/netcoreapp1.1/fundamentalsOne.runtimeconfig.dev.json
+/Users/Mitchell/Desktop/DojoAssignments/netCore/fundamentalsOne/bin/Debug/netcoreapp1.1/fundamentalsOne.dll
+/Users/Mitchell/Desktop/DojoAssignments/netCore/fundamentalsOne/bin/Debug/netcoreapp1.1/fundamentalsOne.pdb
+/Users/Mitchell/Desktop/DojoAssignments/netCore/fundamentalsOne/obj/Debug/netcoreapp1.1/fundamentalsOne.AssemblyInfo.cs
+/Users/Mitchell/Desktop/DojoAssignments/netCore/fundamentalsOne/obj/Debug/netcoreapp1.1/fundamentalsOne.dll
+/Users/Mitchell/Desktop/DojoAssignments/netCore/fundamentalsOne/obj/Debug/netcoreapp1.1/fundamentalsOne.pdb
