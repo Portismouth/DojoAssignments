@@ -8,6 +8,7 @@ namespace human
         public int Dexterity { get; set; }
         public int Health { get; set; }
 
+        //Initializing human object
         public Human(string name, int strength = 3, int intelligence = 3, int dexterity = 3, int health = 100)
         {
             Name = name;
@@ -17,6 +18,7 @@ namespace human
             Health = health;
         }
 
+        //Allow attributes to be changed of human objects
         public void setAttributes(string name, int strength, int intelligence, int dexterity, int health)
         {
             Name = name;
@@ -26,6 +28,7 @@ namespace human
             Health = health;
         }
 
+        //Attack function, takes in ANY kind of object and makes sure you can only attack other humans
         public string attack(object npc, int damage)
         {
             if (npc is Human)
