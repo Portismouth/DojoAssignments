@@ -16,6 +16,7 @@ namespace BoxingUnpacking
             int sum = 0;
             foreach ( var item in box )
             {
+                Console.WriteLine(item);
                 if ( item is int )
                 {
                     int j = (int)item;

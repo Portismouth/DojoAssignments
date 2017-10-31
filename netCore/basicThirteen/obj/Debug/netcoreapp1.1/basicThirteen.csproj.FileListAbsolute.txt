@@ -1,0 +1,8 @@
+/Users/Mitchell/Desktop/DojoAssignments/netCore/basicThirteen/bin/Debug/netcoreapp1.1/basicThirteen.deps.json
+/Users/Mitchell/Desktop/DojoAssignments/netCore/basicThirteen/bin/Debug/netcoreapp1.1/basicThirteen.runtimeconfig.json
+/Users/Mitchell/Desktop/DojoAssignments/netCore/basicThirteen/bin/Debug/netcoreapp1.1/basicThirteen.runtimeconfig.dev.json
+/Users/Mitchell/Desktop/DojoAssignments/netCore/basicThirteen/bin/Debug/netcoreapp1.1/basicThirteen.dll
+/Users/Mitchell/Desktop/DojoAssignments/netCore/basicThirteen/bin/Debug/netcoreapp1.1/basicThirteen.pdb
+/Users/Mitchell/Desktop/DojoAssignments/netCore/basicThirteen/obj/Debug/netcoreapp1.1/basicThirteen.AssemblyInfo.cs
+/Users/Mitchell/Desktop/DojoAssignments/netCore/basicThirteen/obj/Debug/netcoreapp1.1/basicThirteen.dll
+/Users/Mitchell/Desktop/DojoAssignments/netCore/basicThirteen/obj/Debug/netcoreapp1.1/basicThirteen.pdb
