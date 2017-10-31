@@ -1,0 +1,8 @@
+/Users/Mitchell/Desktop/DojoAssignments/netCore/deck/bin/Debug/netcoreapp1.1/deck.deps.json
+/Users/Mitchell/Desktop/DojoAssignments/netCore/deck/bin/Debug/netcoreapp1.1/deck.runtimeconfig.json
+/Users/Mitchell/Desktop/DojoAssignments/netCore/deck/bin/Debug/netcoreapp1.1/deck.runtimeconfig.dev.json
+/Users/Mitchell/Desktop/DojoAssignments/netCore/deck/bin/Debug/netcoreapp1.1/deck.dll
+/Users/Mitchell/Desktop/DojoAssignments/netCore/deck/bin/Debug/netcoreapp1.1/deck.pdb
+/Users/Mitchell/Desktop/DojoAssignments/netCore/deck/obj/Debug/netcoreapp1.1/deck.AssemblyInfo.cs
+/Users/Mitchell/Desktop/DojoAssignments/netCore/deck/obj/Debug/netcoreapp1.1/deck.dll
+/Users/Mitchell/Desktop/DojoAssignments/netCore/deck/obj/Debug/netcoreapp1.1/deck.pdb
