@@ -115,12 +115,12 @@ namespace simpleCRUD
                 Console.Write("Continue (yes/no)? ");
                 cont = Console.ReadLine();
 
-                //USER HAS TO INPUT YES OR NO -- Commented out because its not working :/
-                // while (cont != "yes" || cont != "no")
-                // {
-                //     Console.Write("Please enter yes or no: ");
-                //     cont = Console.ReadLine();
-                // }
+                //USER HAS TO INPUT YES OR NO
+                while (cont != "yes" && cont != "no")
+                {
+                    Console.Write("Please enter yes or no: ");
+                    cont = Console.ReadLine();
+                }
             }
             
         }
