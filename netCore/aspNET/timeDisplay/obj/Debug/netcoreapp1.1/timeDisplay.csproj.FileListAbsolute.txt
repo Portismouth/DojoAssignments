@@ -1,0 +1,8 @@
+/Users/Mitchell/Desktop/DojoAssignments/netCore/aspNET/timeDisplay/bin/Debug/netcoreapp1.1/timeDisplay.deps.json
+/Users/Mitchell/Desktop/DojoAssignments/netCore/aspNET/timeDisplay/bin/Debug/netcoreapp1.1/timeDisplay.runtimeconfig.json
+/Users/Mitchell/Desktop/DojoAssignments/netCore/aspNET/timeDisplay/bin/Debug/netcoreapp1.1/timeDisplay.runtimeconfig.dev.json
+/Users/Mitchell/Desktop/DojoAssignments/netCore/aspNET/timeDisplay/bin/Debug/netcoreapp1.1/timeDisplay.dll
+/Users/Mitchell/Desktop/DojoAssignments/netCore/aspNET/timeDisplay/bin/Debug/netcoreapp1.1/timeDisplay.pdb
+/Users/Mitchell/Desktop/DojoAssignments/netCore/aspNET/timeDisplay/obj/Debug/netcoreapp1.1/timeDisplay.AssemblyInfo.cs
+/Users/Mitchell/Desktop/DojoAssignments/netCore/aspNET/timeDisplay/obj/Debug/netcoreapp1.1/timeDisplay.dll
+/Users/Mitchell/Desktop/DojoAssignments/netCore/aspNET/timeDisplay/obj/Debug/netcoreapp1.1/timeDisplay.pdb

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>The Current time</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        @{
+            <!--Get date and time -->
+            DateTime CurrentTime = DateTime.Now;
+        }
+        <div class="container">
+            <div class="col-sm-12">
+                <h1>The Current Date and Time</h1>
+                <!-- Convert date to string THEN format to what is needed -->
+                <p>@CurrentTime.ToString("MMMM dd, yyyy") <br />@CurrentTime.ToString("hh:mm tt")</p>
+            </div>
+        </div>
+    </body>
+</html>
