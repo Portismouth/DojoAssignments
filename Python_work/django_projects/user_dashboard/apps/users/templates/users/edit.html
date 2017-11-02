@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    {% load static %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'users/css/style.css' %}" />
+    <script src="{% static 'users/javascript/custom.js' %}"></script>
+</head>
+<body>
+    <div class="container">
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                    <a class="navbar-brand" href="{% url 'users:home' %}">WebSiteName</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                    <li><a href="{% url 'users:login' %}">Home</a></li>
+                    {% if User.id != None %}
+                    <li><a href="{% url 'users:dashboard' %}">Dashboard</a></li>
+                    <li><a href="{% url 'users:edit_profile' %}">Profile</a></li>
+                    {% endif %}
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{% url 'users:logout' %}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-login">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h3>Edit Profile</h3>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <h3>Edit Information</h3>
+                                    <form action="{% url 'users:edit_profile' %}" method="POST">
+                                        {% csrf_token %}
+                                        <div class="form-group">
+                                            <label for="first_name">First Name:</label>
+                                            <input type="text" class="form-control" name="first_name" id="first_name" value="{{User.first_name}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="last_name">Last Name:</label>
+                                            <input type="text" class="form-control" name="last_name" id="last_name" value="{{User.last_name}}">
+                                        </div>
+                                        <div class="form-group">
+                                                <label for="username">Username:</label>
+                                                <input type="text" class="form-control" name="username" id="username" value="{{User.username}}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Email:</label>
+                                            <input type="text" class="form-control" name="email" id="email" value="{{User.email}}">
+                                        </div>
+                                        <button type="submit" class="btn btn-default">Update</button>
+                                    </form>
+                                </div>
+                                <div class="col-lg-6">
+                                        <h3>Edit Information</h3>
+                                        <form action="{% url 'users:edit_password' %}" method="POST">
+                                            {% csrf_token %}
+                                            <div class="form-group">
+                                                <label for="password">Password:</label>
+                                                <input type="password" class="form-control" name="password" id="password">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="confirm">Confirm:</label>
+                                                <input type="password" class="form-control" name="confirm" id="confirm">
+                                            </div>
+                                            <button type="submit" class="btn btn-default">Update</button>
+                                        </form>
+                                        <hr>
+                                        <ul class="errors">
+                                                {% for message in messages %}
+                                                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                                {% endfor %}
+                                        </ul>
+                                </div>
+                                <div class="col-lg-12">
+                                        <h3>Add Description</h3>
+                                        <form action="{% url 'users:edit_profile' %}" method="POST">
+                                            {% csrf_token %}
+                                            <div class="form-group">
+                                                <input type="hidden" name="hidden" value="description">
+                                                <label for="description">About:</label>
+                                                <input type="textarea" class="form-control" name="description" id="description" value="{{User.desc}}">
+                                            </div>
+                                            <button type="submit" class="btn btn-default">Update</button>
+                                        </form>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
