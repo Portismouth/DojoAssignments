@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ajax</title>
+    
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
+            asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.css"
+            asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+    
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Ajax Notes</a>
+            </div>
+            <!-- Collection of nav links and other content for toggling -->
+            <div id="navbarCollapse" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+        
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.js"
+                asp-fallback-test="window.jQuery">
+        </script>
+        
+        
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script>
+        $(document).ready(function(){
+            // back-end request
+            $('#content').on('submit',function(e){
+                var id = $(this .hiddenContent).val();
+                $.ajax({
+                    type: "post",
+                    url: '/content/'+id,
+                    data: $('#content').serialize(),
+                    success: function(res){
+                        $("#note_"+id+" #content textarea").html(res);
+                    }
+                    })
+                e.preventDefault();
+                });
+
+            $('#delete').on('click',function(e){
+                var id = $(this).data('id');
+                $.ajax({
+                    type: "post",
+                    url: '/delete/'+id,
+                    success: function(data){
+                        console.log(data);
+                        $("#note_"+data).remove();
+                    }
+                    })
+            e.preventDefault();
+            });
+
+            $('#note').on('submit',function(e){
+                e.preventDefault();
+                $.ajax({
+                    type: "post",
+                    url: '/',
+                    data: $('#note').serialize(),
+                    success: function(data){
+                        console.log("success")
+                        console.log(data)
+                        var last = data[data.length -1];
+                        $("#reviews").append('<div class="col-sm-6">\<h4>'+last['name']+'</h4>\</div>\<div class="col-sm-6" style="text-align: right">\<a id="delete" href="/delete/'+last["id"]+'" class="btn btn-default">Delete</a>\</div>\<form id="content" action="/content/'+last["id"]+'" method="post">\<input type="hidden" name="hiddenContent" class="hiddenContent" value="'+last["id"]+'">\<textarea name="content" class="form-control"></textarea>\<button class="submit" type="submit">Edit description</button>\</form>');
+                    }
+                    })
+                e.preventDefault();
+                })
+            })
+        </script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

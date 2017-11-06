@@ -1,0 +1,30 @@
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="row">
+    <div class="col-sm-4">
+        <form id="note" action="/" method="post">
+            <input type="text" name="name" placeholder="New Note Title">
+            <button class="submit" type="submit">Add Note</button>
+        </form>
+    </div>
+    <div id="reviews" class="col-sm-8">
+        @foreach(var note in ViewBag.notes)
+        {
+            <div id='note_@note["id"]'>
+            <div class="col-sm-6">
+                <h4>@note["name"]</h4>
+            </div>
+            <div class="col-sm-6" style="text-align: right">
+                <a href='/delete/@note["id"]' data-id='@note["id"]' id="delete" class="btn btn-default">Delete</a>
+            </div>
+            <form id="content" action="/content/@note["id"]" method="post">
+                <input type="hidden" name="hiddenContent" class="hiddenContent" value="@note["id"]">
+                <textarea name="content" class="form-control">@note["content"]</textarea>           <button class="submit" type="submit">Edit description</button>
+            </form>
+            </div>
+        }
+    </div>
+</div>
