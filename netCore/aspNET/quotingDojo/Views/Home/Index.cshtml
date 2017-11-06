@@ -1,0 +1,17 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="row">
+    <div class="col-sm-12">
+        <h3>Send a Quote</h3>
+        <form action="/quotes" method="post">
+            <div class="form-group">
+                <input type="text" name="name" class="form-control" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <input type="text" name="quote" class="form-control" placeholder="Quote">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+</div>

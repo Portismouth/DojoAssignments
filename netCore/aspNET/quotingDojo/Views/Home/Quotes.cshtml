@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = "Quotes Page";
+}
+
+@foreach(var quote in ViewBag.quotes)
+{
+<div class="row">
+    <div class="col-sm-12">
+        <p>"@quote["quote"]"</p>
+        <p>-@quote["name"] at @quote["created_at"]</p>
+    </div>
+</div>
+<hr>
+}
+
+    
