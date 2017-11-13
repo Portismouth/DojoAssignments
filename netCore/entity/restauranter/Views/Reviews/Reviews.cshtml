@@ -1,0 +1,13 @@
+@using restauranter.Models
+@model List<restauranter.Models.Review>
+
+<h1>Reviews Page</h1>
+@foreach (var review in Model)
+{
+    <p>@review.reviewname</p>
+    <p>@review.restaurantname</p>
+    <p>@review.review</p>
+    <p>@review.rating</p>
+    <p>@review.date</p>
+    <hr>
+}
