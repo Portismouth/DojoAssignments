@@ -1,0 +1,43 @@
+@using BankAccounts.Models
+@model BankAccounts.Models.AccountChange
+
+<h1>Account Page</h1>
+<div class="row">
+    <div class="col-sm-6">
+        <form asp-controller="Home" asp-action="Change" method="post">
+            <div class="form-group">
+                <span asp-validation-for="change"></span>
+                <label>Withdraw</label>
+                <input asp-for="change" type="radio" id="radioButton" name="change" value="Withdraw" checked>
+                <label>Deposit</label>
+                <input asp-for="change" type="radio" id="radioButton" name="change" value="Deposit">
+            </div>
+            <div class="form-group">
+                @if (TempData["error"] != null)
+                {
+                    <span>@TempData["error"]</span>
+                }
+                <span asp-validation-for="amount"></span>
+                <input asp-for="amount" class="form-control" type="text" name="amount" />
+            </div>
+            <button class="btn btn-default">Widthdraw/deposit</button>
+        </form>
+        <table class="table">
+            <tr>
+                <th>Amount</th>
+                <th>Date</th>
+            </tr>
+            @foreach (var x in ViewBag.History)
+            {
+                <tr>
+                    <td>@x.change</td>
+                    <td>@x.date.ToString("MM/dd/yyyy")</td>
+                </tr>             
+            }
+        </table>
+    </div>
+    <div class="col-sm-6">
+        <h3>Balance:</h3>
+        <p>$ @ViewBag.User.balance</p>
+    </div>
+</div>
