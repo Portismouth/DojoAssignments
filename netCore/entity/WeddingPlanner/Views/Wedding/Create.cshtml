@@ -1,0 +1,22 @@
+@model WeddingPlanner.Models.WeddingRegister
+
+<h1>Plan Your Wedding</h1>
+<div class="row">
+    <div class="col-sm-6">
+        <form asp-controller="Wedding" asp-action="CreateWedding" method="post">
+            <div class="form-group">
+                <input asp-for="wedderone" class="form-control" type="text" placeholder="Wedder One">
+            </div>
+            <div class="form-group">
+                <input asp-for="weddertwo" class="form-control" type="text" placeholder="Wedder Two">
+            </div>
+            <div class="form-group">
+                <input asp-for="date" class="form-control" type="date" placeholder="Date">
+            </div>
+            <div class="form-group">
+                <input asp-for="address" class="form-control" type="text" placeholder="Wedding Address">
+            </div>
+            <button class="btn btn-default" type="submit">Create</button>
+        </form>
+    </div>
+</div>

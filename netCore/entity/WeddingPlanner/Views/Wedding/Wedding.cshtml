@@ -1,0 +1,17 @@
+@using WeddingPlanner.Models
+
+<h1>Wedding Page for @ViewBag.wedding.wedderone & @ViewBag.wedding.weddertwo</h1>
+<div class="row">
+    <div class="col-sm-6">
+        <h3>Guests:</h3>
+        <ul style="list-style-type: none;">
+        @foreach (var guest in @ViewBag.wedding.guests)
+        {
+            <li>@guest.user.firstname @guest.user.lastname</li>
+        }
+        </ul>
+    </div>
+    <div class="col-sm-6">
+        <h3>Map Goes here</h3>
+    </div>
+</div>

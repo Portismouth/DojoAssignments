@@ -1,0 +1,51 @@
+@using WeddingPlanner.Models
+@using System.Collections.Generic
+@model WeddingPlanner.Models.Wrapper
+
+<h1>Wedding Page</h1>
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Wedding</th>
+                    <th>Date</th>
+                    <th>Guests</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var wedding in ViewBag.Weddings)
+            {
+                <tr>
+                    <td><a href="/wedding/@wedding.weddingid">@wedding.wedderone & @wedding.weddertwo</a></td>
+                    <td>@wedding.date.ToString("MM/dd/yyyy")</td>
+                    <td>@wedding.guests.Count</td>
+                    <td>
+                        @if(wedding.guests != null && ViewBag.User != null)
+                        {
+                            var guests = wedding.guests as List<Guest>;
+                            if(guests.Any(g => g.userid == ViewBag.User.userid))
+                            {
+                                <a href="unrsvp/@wedding.weddingid/@ViewBag.User.userid">UN-RSVP</a>
+                            }
+                            else
+                            {
+                                <a href="rsvp/@wedding.weddingid">RSVP</a>
+                            }
+                        }
+                        else
+                        {
+                            <a href="/">Login to RSVP</a>
+                        }
+                    </td>
+                </tr>
+                
+            }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-sm-12 text-right">
+        <a href="/create" class="btn btn-default">Create Wedding</a>
+    </div>
+</div>
