@@ -1,0 +1,49 @@
+@using ecommerce.Models
+@model StoreWrapper
+
+<div class="row">
+    <div class="col-sm-2">
+        @Html.Partial("SearchPartial")
+    </div>
+    <div class="col-sm-10">
+        <div class="row">
+            <h2>Recent Products</h2>
+        @foreach (var product in Model.products)
+        {
+            <div class="col-sm-4">
+                <img style="width: 100%" src="http://www.euneighbours.eu/sites/default/files/2017-01/placeholder.png" alt="sample" />
+                <h4>@product.name</h4>
+                <h4><em>(@product.quantity left)</em></h4>
+            </div>
+        }
+        </div>
+        <a class="btn btn-default" href="/products">Show More</a>
+        <hr>
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Recent Orders</h2>
+                <ul style="list-style-type: none;">
+                @foreach(var order in Model.orders)
+                {
+                    <li>@order.customer.name ordered @order.quantity @order.product.name </li>
+                }
+                </ul>
+                <a class="btn btn-default" href="/orders">Show All Orders</a>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>New Customers</h2>
+                <ul style="list-style-type: none;">
+                @foreach(var customer in Model.customers)
+                {
+                    <li>@customer.name joined on @customer.createdat.ToString("MM/dd/yyyy") </li>
+                }
+                </ul>
+                <a class="btn btn-default" href="/customers">All Customers</a>
+            </div>
+        </div>
+        <hr>
+    </div>
+</div>

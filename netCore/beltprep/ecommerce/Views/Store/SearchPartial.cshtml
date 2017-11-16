@@ -1,0 +1,7 @@
+@using ecommerce.Models
+<form asp-controller="Store" asp-action="Search" method="post">
+    <div class="form-group">
+        <input asp-for"filter" name="filter" id="filter" placeholder="search...">
+    </div>
+    <button type="submit" class="btn btn-default">Filter</button>
+</form>
