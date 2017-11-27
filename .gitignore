@@ -1,3 +1,6 @@
 Python_work/myEnvironments/
 *.pyc
 .vscode/
+appsettings.json
+node_modules/
+package-lock.json

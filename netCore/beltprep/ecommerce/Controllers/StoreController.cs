@@ -20,14 +20,12 @@ namespace ecommerce.Controllers
         {
             _context = context;
         }
-
         //Current datetime
         public DateTime now()
         {
             DateTime now = DateTime.Now;
             return now;
         }
-
         public bool CheckLoggedIn()
         {
             int? id = HttpContext.Session.GetInt32("LOGGED_IN_USER");
@@ -47,7 +45,6 @@ namespace ecommerce.Controllers
             List<Customer> AllCustomers = _context.Customers.ToList();
             ViewBag.customers = AllCustomers;
         }
-
         // GET: /Home/
         [HttpGet]
         [Route("/dashboard")]
@@ -64,8 +61,6 @@ namespace ecommerce.Controllers
             StoreWrapper model = new StoreWrapper(homeCustomers, homeOrders, homeProducts);
             return View(model);
         }
-
-        
         // Orders get route
         [HttpGet]
         [Route("/orders")]
@@ -100,7 +95,6 @@ namespace ecommerce.Controllers
 
             return RedirectToAction("Orders");
         }
-
         //Customers Route
         [HttpGet]
         [Route("/customers")]
@@ -186,10 +180,6 @@ namespace ecommerce.Controllers
             {
                 return RedirectToAction("Products", new {search = filter});
             }
-            // CheckLoggedIn();
-            // List<Product> productsModel = _context.Product.ToList();
-            // ProductWrapper model = new ProductWrapper(productsModel, filter);
-            // ViewBag.errors = ModelState.Values;
             return RedirectToAction("Products");
         }
     }
