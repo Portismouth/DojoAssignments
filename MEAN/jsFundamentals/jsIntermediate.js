@@ -20,7 +20,9 @@ function drawStars(arr){
             console.log(stars)
         }
         if(typeof arr[x] === 'number'){
-            if(arr[x] == 0){console.log(stars)}
+            if(arr[x] == 0){
+                console.log(stars)
+            }
             for(let i = 1; i<=arr[x] ; i++){
                 stars+= "*"
             }
