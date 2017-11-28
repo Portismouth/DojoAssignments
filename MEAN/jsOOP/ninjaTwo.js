@@ -13,7 +13,7 @@ function Ninja(name){
         return this
     }
     this.drinkSake = function(){
-        health += 10
+        this.health += 10
         return this
     }
     this.punch = function(obj){
