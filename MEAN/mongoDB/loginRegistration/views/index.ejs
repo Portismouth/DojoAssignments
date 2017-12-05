@@ -48,7 +48,10 @@
                     <div class="form-group">
                         <input name="lastName" class="form-control" placeholder="Last Name"/>
                     </div>
-                    <div class="form-group">  
+                    <div class="form-group">
+                        <% if( errorsRegister && errorsRegister.email ) { %>
+                            <%= errorsRegister.email %>
+                        <% } %>
                         <input name="email" class="form-control" placeholder="Email"/>
                     </div>
                     <div class="form-group">
@@ -85,5 +88,6 @@
             </div>
         </div>
     </div>
+    <%= errorsRegister.password %>
 </body>
 </html>

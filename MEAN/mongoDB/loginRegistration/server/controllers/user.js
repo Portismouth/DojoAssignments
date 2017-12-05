@@ -45,7 +45,8 @@ module.exports = {
            });
            newUser.save(function(err) {
                if(err) {
-                   res.render('index', {errorsRegister: err});
+                   console.log(err.errors)
+                   res.render('index', {errorsRegister: err.errors, context: null});
                } else {
                     User.findOne({email: req.body.email}, function(errOther, user) {
                         console.log(user._id)
