@@ -1,0 +1,10 @@
+<div class="col-sm-12">
+  <h1>{{ title }}</h1>
+  <div class="row">
+    <div class="col-sm-1 height" *ngFor='let color of random' [ngStyle]="{'background-color': color}"></div>
+  </div>
+  <h1>{{ title }} 2</h1>
+  <div class="row">
+    <div class="col-sm-1 height" *ngFor='let color of bgColors' [ngStyle]="{'background-color': bgColors[randomNumber()]}"></div>
+  </div>
+</div>
