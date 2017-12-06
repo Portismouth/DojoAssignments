@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>{{title}}</h1>
+    </div>
+    <div class="col">
+      <button class="btn btn-secondary" [ngClass]="{'active':last === 'America/Los_Angeles'}" (click)="newDate('America/Los_Angeles')">PST</button>
+    </div>
+    <div class="col">
+        <button class="btn btn-secondary" [ngClass]="{'active':last === 'America/Denver'}" (click)="newDate('America/Denver')">MST</button>
+    </div>
+    <div class="col">
+        <button class="btn btn-secondary" [ngClass]="{'active':last === 'America/Chicago'}" (click)="newDate('America/Chicago')">CST</button>
+    </div>
+    <div class="col">
+        <button class="btn btn-secondary" [ngClass]="{'active':last === 'America/New_York'}" (click)="newDate('America/New_York')">EST</button>
+    </div>
+    <div class="col">
+        <button class="btn btn-secondary" (click)="newDate('Clear')">Clear</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <h1>{{ date | date:'longDate' }} : {{date | date:'shortTime'}}</h1>
+    </div>
+  </div>
+</div>
