@@ -13,6 +13,7 @@ export class AppComponent {
   confirmPassword="";
   users = [];
   recentUser;
+  
   onSubmit(){
     this.users.push(this.user);
     this.confirmPassword="";
