@@ -1,0 +1,75 @@
+<h1>{{title}}</h1>
+<div class="row">
+  <div class="col-sm-8">
+    <form class="form" (submit)="onSubmit(); myNgForm.resetForm()" #myNgForm="ngForm">
+      <div class="form-group">
+        <label for="firstName">First Name</label> 
+        <span class="error" *ngIf="firstName.errors != null">- Field is Required</span>
+        <span class="error" *ngIf="firstName.errors == null" style="color: green">&#10003;</span><br>
+        <input type="text" class="form-control" name="firstName" required minlength="2" [(ngModel)]="user.firstName" #firstName="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label> 
+        <span class="error" *ngIf="lastName.errors != null">- Field is Required</span>
+        <span class="error" *ngIf="lastName.errors == null" style="color: green">&#10003;</span><br>
+          <input type="text" class="form-control" name="lastName" required minlength="2" [(ngModel)]="user.lastName" #lastName="ngModel">
+      </div>
+      <div class="form-group">
+          <label for="email">Email</label> 
+          <span class="error" *ngIf="email.errors != null">- Please enter a valid email</span>
+          <span class="error" *ngIf="email.errors == null" style="color: green">&#10003;</span><br>
+          <input type="email" class="form-control" name="email" minlength="4" pattern="^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$" [(ngModel)]="user.email" #email="ngModel" required>
+      </div>
+      <div class="form-group">
+          <label for="password">Password</label>
+          <span class="error" *ngIf="password.errors != null">- Password requires 8 character, one capital, and one number</span>
+          <span class="error" *ngIf="password.errors == null" style="color: green">&#10003;</span><br>
+          <input type="password" class="form-control" name="password" minlength="8" [(ngModel)]="user.password" #password="ngModel" pattern="^(.*[0-9].*[A-Z].*)|(.*[A-Z].*[0-9].*)$" required>
+      </div>
+      <div class="form-group">
+          <label for="passwordConfirm">Confirm Password</label> 
+          <span class="error" *ngIf="user.password != confirmPassword">Passwords Do Not Match</span>
+          <span class="error" *ngIf="user.password == confirmPassword" style="color: green">&#10003;</span><br>
+          <input type="password" class="form-control" name="confirmPassword" [(ngModel)]="confirmPassword" required>
+      </div>
+      <div class="form-group">
+          <label for="streetAddress">Street Address</label> 
+          <span class="error" *ngIf="streetAddress.errors != null">- Field is Required</span>
+          <span class="error" *ngIf="streetAddress.errors == null" style="color: green">&#10003;</span><br>
+          <input type="text" class="form-control" name="streetAddress" [(ngModel)]="user.streetAddress" #streetAddress="ngModel" required>
+      </div>
+      <div class="form-group">
+          <label for="city">City</label>
+          <span class="error" *ngIf="city.errors != null">- Field is Required</span>
+          <span class="error" *ngIf="city.errors == null" style="color: green">&#10003;</span><br>
+          <input type="text" class="form-control" name="city" [(ngModel)]="user.city" #city="ngModel" required>
+      </div>
+      <div class="form-group">
+          <label for="state">State</label>
+          <span class="error" *ngIf="state.errors != null">- Field is Required</span>
+          <span class="error" *ngIf="state.errors == null" style="color: green">&#10003;</span><br>
+          <select class="form-control" name="state" [(ngModel)]="user.state" #state="ngModel" required>
+            <option *ngFor="let state of states" value="{{state}}" name="state">{{state}}</option>
+          </select>
+      </div>
+      <button class="btn btn-primary" type="submit" [disabled]="!myNgForm.valid">Submit</button>
+    </form>
+  </div>
+  <div class="col-sm-4">
+    <div class="recentUserContent">
+      <h2>Most Recent User</h2>
+      <div *ngIf="recentUser">
+            <p><strong>Name: </strong>{{recentUser.firstName}} {{recentUser.lastName}}</p>
+            <p><strong>Email: </strong>{{recentUser.email}}</p>
+            <p><strong>Address: </strong>{{recentUser.streetAddress}}, {{recentUser.city}}, {{recentUser.state}}</p>
+      </div>
+    </div>
+    <hr>
+    <div class="allUsers">
+        <h2>All Users</h2>
+        <ul>
+            <li *ngFor="let user of users">{{user.firstName}}</li>
+        </ul>
+    </div>
+  </div>
+</div>

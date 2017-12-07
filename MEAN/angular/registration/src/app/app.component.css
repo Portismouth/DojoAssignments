@@ -1,0 +1,15 @@
+.ng-valid { } 
+.ng-invalid { } 
+.ng-pristine { } 
+.ng-dirty { } 
+.ng-touched { } 
+.ng-untouched { } 
+
+.error{
+    font-size: 12px;
+    color: red;
+}
+
+form.ng-pristine .error{
+    display: none;
+}
