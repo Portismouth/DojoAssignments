@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-sm-12">
+    <form class="form-inline" (submit)="onSubmit(powerForm)" #myNgForm="ngForm">
+      <label>Power Level</label>
+      <input 
+      type="number" 
+      name="powerForm" 
+      [(ngModel)]="powerForm"
+      #powerFormWhatever="ngModel"
+      min="1" 
+      max="100" 
+      pattern="^$|^([0-9]|[1-9][0-9]|[1][0][0])?" 
+      required >
+      <button class="btn btn-default" [disabled]="!myNgForm.valid || powerForm < 0 || powerForm > 100">Submit</button>
+      {{ powerFormWhatever.errors | json }}
+    </form>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-4 box">
+    <app-human [myPower]='power'></app-human>
+  </div>
+  <div class="col-sm-4 box">
+    <app-saiyan [myPower]='power'></app-saiyan>
+  </div>
+  <div class="col-sm-4 box">
+    <app-supersaiyan [myPower]='power'></app-supersaiyan>
+  </div>
+  <div class="col-sm-4 box">
+    <app-supersaiyantwo [myPower]='power'></app-supersaiyantwo>
+  </div>
+  <div class="col-sm-4 box">
+    <app-supersaiyanthree [myPower]='power'></app-supersaiyanthree>
+  </div>
+  <div class="col-sm-4 box">
+    <app-supersaiyanfour [myPower]='power'></app-supersaiyanfour>
+  </div>
+</div>
