@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-sm-6">
+    <p>"{{ myQuotes.content }}"</p>
+    <p>- {{ myQuotes.author }}</p>
+    <p>{{myQuotes.idx}}</p>
+  </div>
+  <div class="col-sm-4">
+    <h1 style="text-align: right;">{{ myQuotes.rating }}</h1>
+  </div>
+  <div class="col-sm-2">
+    <a class="btn btn-default" style="width: 100%;" (click)='voteTrigger(index, "up")'>Upvote</a>
+    <a class="btn btn-default" style="width: 100%;" (click)='voteTrigger(index, "down")'>Downvote</a>
+    <a class="btn btn-default" style="width: 100%;" (click)='voteTrigger(index, "delete")'>Delete</a>
+  </div>
+</div>
+<hr>
