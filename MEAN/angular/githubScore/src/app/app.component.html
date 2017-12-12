@@ -1,0 +1,9 @@
+
+
+<form (submit)="onSubmit(user)">
+  <input type="text" name="user" [(ngModel)]="user">
+  <button type="submit">Submit</button>
+</form>
+
+
+<p [ngStyle]="{'color': color}">{{ response }} -- {{ message }} -- {{ color }}</p>
