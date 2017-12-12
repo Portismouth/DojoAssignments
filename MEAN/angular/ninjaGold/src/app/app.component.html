@@ -1,0 +1,4 @@
+<h1>Gold:</h1>
+<p>{{ gold }}</p>
+<app-action-component style="display: inline-block" *ngFor="let action of actions; let idx = index" (workEmitter)="getGold($event)" [index]="idx" [action]="action"></app-action-component>
+<app-list-component></app-list-component>
