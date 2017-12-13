@@ -1,0 +1,21 @@
+<p>
+  {{ data | json }}
+</p>
+<h1 class="text-center">{{ data.name }}</h1>
+<div class="row">
+  <div class="col-sm-6">
+    <p>Humidity: {{ data.main.humidity }}</p>
+    <p>Temperature (Avg): {{ data.main.temp }}</p>
+    <p>Temperature (High): {{ data.main.temp_max }}</p>
+    <p>Temperature (Low): {{ data.main.temp_min }}</p>
+    <p>Status: {{ data.weather[0].main }}  </p>
+  </div>
+  <div class="col-sm-6">
+    <img *ngIf="data.name === 'Chicago'" src="https://urbanmatter.com/chicago/wp-content/uploads/2016/09/chicago-image-1.jpg" style="width: 100%;"/>
+    <img *ngIf="data.name === 'San Jose'" src="http://doubletree3.hilton.com/resources/media/dt/JOSE-DT/en_US/img/shared/full_page_image_gallery/main/dh_siliconvalley_2_677x380_FitToBoxSmallDimension_Center.jpg" style="width: 100%;"/>
+    <img *ngIf="data.name === 'Burbank'" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Burbank_media_district_from_Griffith_Park_2015-11-07.jpg/1200px-Burbank_media_district_from_Griffith_Park_2015-11-07.jpg" style="width: 100%;"/>
+    <img *ngIf="data.name === 'Dallas'" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf0WwJbLSkfALzbNDSh79ITj4fHKUEcJYfBS191iuBkgUDLEBD" style="width: 100%;"/>
+    <img *ngIf="data.name === 'Atlanta'" src="https://incomeinvestor.com/wp-content/uploads/2017/07/Depositphotos_4025913_original-e1456865448495.jpg" style="width: 100%;"/>
+    <img *ngIf="data.name === 'Seattle'" src="https://migvapor.com/ecig-news/wp-content/uploads/2015/12/Seattle-WA.jpg" style="width: 100%;"/>
+  </div>
+</div>

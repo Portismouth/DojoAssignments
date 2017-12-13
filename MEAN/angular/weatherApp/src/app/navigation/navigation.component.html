@@ -1,0 +1,6 @@
+<h1 class="text-center">Dojo Weather Forcast</h1>
+<ul class="nav nav-pills nav-fill">
+  <li class="nav-item" *ngFor="let item of navigation">
+    <a class="nav-link" (click)='getWeather(item)' href="#">{{ item }}</a>
+  </li>
+</ul>
